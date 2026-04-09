@@ -3,10 +3,10 @@
 """
 02_clean.py
 -----------
-Cleans the raw Calm app reviews from data/reviews_raw.jsonl
-and saves the cleaned dataset to data/reviews_clean.jsonl.
+input: data/reviews_raw.jsonl
+output: data/reviews_clean.jsonl.
 
-Cleaning steps (as required by EECS 4312 project spec):
+Cleaning steps:
     1. Remove duplicate reviews
     2. Remove empty or extremely short reviews (< 3 words)
     3. Remove punctuation
@@ -16,9 +16,6 @@ Cleaning steps (as required by EECS 4312 project spec):
     7. Convert all words to lowercase
     8. Remove stop words
     9. Lemmatize the reviews
-
-Usage:
-    python src/02_clean.py
 """
 
 import json

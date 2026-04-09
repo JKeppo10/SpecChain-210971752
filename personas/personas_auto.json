@@ -2,58 +2,58 @@
   "personas": [
     {
       "id": "P1",
-      "name": "The Serene Seeker",
-      "description": "A user who seeks relaxation, stress relief, and improved sleep through meditation and calming activities.",
+      "name": "The Seeking Serenity User",
+      "description": "A user who seeks to utilize the app for relaxation, stress relief, and improved sleep quality.",
       "derived_from_group": "G1",
       "goals": [
         "Reduce daily stress and anxiety",
-        "Improve sleep quality",
-        "Find a sense of calm and relaxation"
+        "Improve sleep quality and duration",
+        "Establish a consistent meditation practice"
       ],
       "pain_points": [
         "Difficulty staying motivated to meditate daily",
         "Trouble falling asleep due to racing thoughts",
-        "Limited time for meditation sessions"
+        "Limited time for lengthy meditation sessions"
       ],
       "context": [
         "Before bed, to prepare for sleep",
-        "During a short break at work, to recharge"
+        "During short breaks at work, to reduce stress"
       ],
       "constraints": [
-        "Easy access to a variety of meditation sessions",
-        "Guided meditations that are short and effective"
+        "The app must offer short, flexible meditation sessions",
+        "The app must have a user-friendly interface for easy navigation"
       ],
       "evidence_reviews": [
-        "R00001",
         "R00005",
         "R00007",
         "R00008",
         "R00010",
-        "R00013"
+        "R00013",
+        "R00014"
       ]
     },
     {
       "id": "P2",
       "name": "The Frustrated Saver",
-      "description": "A budget-conscious individual who is hesitant to commit to a paid subscription due to perceived value and cost concerns.",
+      "description": "A budget-conscious individual who is hesitant to commit to a paid subscription due to concerns about cost and value.",
       "derived_from_group": "G2",
       "goals": [
-        "Access meditation and sleep content without incurring significant costs",
-        "Try out the app's features before committing to a paid plan",
-        "Find a subscription model that aligns with their usage and budget"
+        "Try meditation and sleep content without committing to a paid plan",
+        "Find free or low-cost alternatives to the app's premium features",
+        "Understand the app's pricing and subscription model clearly"
       ],
       "pain_points": [
-        "Feeling locked out of valuable content due to paywalls and subscription requirements",
-        "Perceiving the app's pricing as too expensive compared to its offered features",
-        "Encountering difficulties or unclear processes when trying to cancel or change their subscription"
+        "Feeling misled by the free trial and subsequent paywall",
+        "Finding the app's content and features not worth the cost",
+        "Encountering ads and prompts to upgrade to a paid plan"
       ],
       "context": [
-        "Considering downloading a meditation and sleep app, but is hesitant due to cost concerns",
-        "Actively using the app but is frustrated with the current subscription model and is looking for alternatives or changes"
+        "Exploring meditation and sleep apps for the first time",
+        "Considering a paid subscription but wanting to try before committing"
       ],
       "constraints": [
-        "The app must offer a free trial or a free version with meaningful content to try before buying",
-        "The app's subscription model must be transparent and flexible to accommodate changing user needs and budgets"
+        "The app must offer a clear and transparent pricing model",
+        "The app must provide free access to some content or a free trial without requiring payment information"
       ],
       "evidence_reviews": [
         "R00003",
@@ -61,63 +61,63 @@
         "R00009",
         "R00012",
         "R00016",
-        "R00019"
+        "R00027"
       ]
     },
     {
       "id": "P3",
-      "name": "The Discerning User",
-      "description": "A user who values simplicity, effective features, and high-quality content in their meditation and sleep app experience.",
+      "name": "The Content Critic",
+      "description": "A user who values simplicity and effectiveness in the app's content and features, with a focus on meditation and sleep.",
       "derived_from_group": "G3",
       "goals": [
-        "Find calming content that helps me relax and fall asleep quickly",
-        "Easily navigate and access various features and meditations",
-        "Discover new and diverse stories and visual imagery to keep my practice engaging"
+        "Find easy-to-use and effective meditation and sleep content",
+        "Access a wide variety of relaxing stories and sounds",
+        "Get support through live sessions or daily exercises"
       ],
       "pain_points": [
-        "Difficulty finding specific types of content, such as nature sounds or stories with visual imagery",
-        "Frustration with complicated or cluttered app interfaces",
-        "Disappointment with updates that change the app's functionality or user experience"
+        "Difficulty navigating complex features and technology",
+        "Limited access to simple and calming content",
+        "Insufficient support for specific needs or goals"
       ],
       "context": [
-        "Before bed, trying to wind down and fall asleep",
-        "During a break at work, seeking a moment of calm and relaxation"
+        "Before bed, to fall asleep quickly and peacefully",
+        "During a stressful day, to take a short meditation break"
       ],
       "constraints": [
         "The app must have a simple and intuitive interface",
-        "The app must offer a wide variety of high-quality, diverse content"
+        "The app must offer a diverse library of relaxing content, including stories and sounds"
       ],
       "evidence_reviews": [
+        "R00001",
         "R00002",
         "R00011",
         "R00015",
         "R00018",
-        "R00020",
-        "R00021"
+        "R00020"
       ]
     },
     {
       "id": "P4",
       "name": "The Frustrated Tech User",
-      "description": "A user who experiences technical difficulties with the Calm app and struggles to navigate its features.",
+      "description": "A user who experiences technical difficulties with the Calm app and seeks a seamless and reliable experience.",
       "derived_from_group": "G4",
       "goals": [
-        "Resolve technical issues to access meditation and sleep content",
-        "Find an easy way to manage subscription and payment",
-        "Successfully use the app's features to relax and sleep"
+        "Troubleshoot and resolve technical issues with the app",
+        "Successfully access and play meditation and sleep content",
+        "Use the app without encountering glitches or errors"
       ],
       "pain_points": [
-        "Difficulty with login and payment processes",
-        "Glitches and technical issues when trying to play content",
-        "Lack of clear instructions for troubleshooting common problems"
+        "Difficulty logging in or accessing the app",
+        "Glitches or freezing when trying to play content",
+        "Inability to hear audio or soundtracks"
       ],
       "context": [
-        "Trying to use the app before bed to fall asleep",
-        "Attempting to meditate during a busy workday"
+        "Trying to relax or fall asleep using the app's meditation and sleep features",
+        "Using the app on their iPhone or other mobile device"
       ],
       "constraints": [
-        "The app must be easy to navigate for someone with limited technical expertise",
-        "The app must have clear and simple instructions for resolving common technical issues"
+        "The app must be compatible with their device and operating system",
+        "The app must have a stable and reliable connection to function properly"
       ],
       "evidence_reviews": [
         "R00060",
@@ -125,39 +125,39 @@
         "R00122",
         "R00145",
         "R00149",
-        "R00213"
+        "R00178"
       ]
     },
     {
       "id": "P5",
-      "name": "The Frugal Skeptic",
-      "description": "A cost-conscious user who questions the value of the Calm app compared to free or cheaper alternatives.",
+      "name": "The Frustrated Subscriber",
+      "description": "A Calm app user who is struggling to cancel their subscription or request a refund.",
       "derived_from_group": "G5",
       "goals": [
-        "Find meditation and sleep content that justifies the app's cost",
-        "Discover new features and content that make Calm stand out from free resources",
-        "Effectively manage stress and sleep without breaking the bank"
+        "Easily cancel their subscription",
+        "Get a refund for their subscription",
+        "Stop recurring payments"
       ],
       "pain_points": [
-        "Perceives the app as too expensive compared to free online resources",
-        "Difficulty finding content that makes the subscription worthwhile",
-        "Uncertain if Calm's features are significantly better than free alternatives"
+        "Difficulty finding the option to cancel subscription",
+        "Inability to cancel auto-renewal",
+        "Perceived fraud or unfair practices when trying to cancel"
       ],
       "context": [
-        "Considering a subscription renewal, evaluating if Calm still offers value",
-        "Searching for a specific type of meditation or sleep content, comparing Calm to free online options"
+        "When they no longer want to use the Calm app and want to stop payments",
+        "When they have tried to cancel but encountered obstacles"
       ],
       "constraints": [
-        "The app must offer unique content or features that justify the cost",
-        "The app must provide clear information about its value proposition and what sets it apart from free alternatives"
+        "The app must have a clear and straightforward cancellation process",
+        "The app must provide a secure and transparent way to manage recurring payments"
       ],
       "evidence_reviews": [
+        "R00019",
+        "R00024",
         "R00028",
-        "R00036",
-        "R00042",
-        "R00044",
-        "R00047",
-        "R00050"
+        "R00034",
+        "R00056",
+        "R00072"
       ]
     }
   ]

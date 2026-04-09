@@ -18,36 +18,81 @@ Calm is a meditation and sleep app available on the Google Play Store. This proj
 - Removed emojis, unicode symbols, punctuation, and special characters
 - Converted numbers to English word equivalents
 - Normalized whitespace and converted to lowercase
-- Removed English stop words and lemmatized tokens using spaCy
+- Removed English stop words and lemmatized tokens using spaCy (`en_core_web_sm`)
 
 ## Repository Structure
 
 ```
-data/         — raw and cleaned datasets, review group files
-personas/     — persona files for all three pipelines
-spec/         — specification files for all three pipelines
-tests/        — validation test files for all three pipelines
-metrics/      — metric files and summary for all three pipelines
-prompts/      — LLM prompts used in the automated pipeline
-src/          — all executable Python scripts
-reflection/   — final reflection
+data/
+  reviews_raw.jsonl           — raw collected reviews
+  reviews_clean.jsonl         — cleaned dataset
+  dataset_metadata.json       — collection and cleaning details
+  review_groups_manual.json   — manually created review groups
+  review_groups_auto.json     — automatically generated review groups
+  review_groups_hybrid.json   — human-refined review groups
+
+personas/
+  personas_manual.json        — manually created personas
+  personas_auto.json          — automatically generated personas
+  personas_hybrid.json        — human-refined personas
+
+spec/
+  spec_manual.md              — manually written requirements
+  spec_auto.md                — automatically generated requirements
+  spec_hybrid.md              — human-refined requirements
+
+tests/
+  tests_manual.json           — manually written validation tests
+  tests_auto.json             — automatically generated validation tests
+  tests_hybrid.json           — human-refined validation tests
+
+metrics/
+  metrics_manual.json         — metrics for the manual pipeline
+  metrics_auto.json           — metrics for the automated pipeline
+  metrics_hybrid.json         — metrics for the hybrid pipeline
+  metrics_summary.json        — side-by-side comparison of all three pipelines
+
+prompts/
+  prompt_auto.json            — LLM prompts used in the automated pipeline
+
+src/
+  00_validate_repo.py         — validates all required files are present
+  01_collect_or_import.py     — collects reviews from the Google Play Store
+  02_clean.py                 — cleans and preprocesses raw reviews
+  03_manual_coding_template.py
+  04_personas_manual.py
+  05_personas_auto.py         — groups reviews and generates personas (LLM)
+  06_spec_generate.py         — generates specifications from personas (LLM)
+  07_tests_generate.py        — generates validation tests from spec (LLM)
+  08_metrics.py               — computes pipeline metrics
+  run_all.py                  — runs the full automated pipeline end to end
+
+reflection/
+  reflection.md               — comparison and discussion of all three pipelines
 ```
 
 ## How to Run
 
-**1. Validate the repository structure:**
-```bash
-python src/00_validate_repo.py
-```
-
-**2. Run the full automated pipeline** (cleans raw data, groups reviews, generates personas, specs, tests, and computes metrics):
+**1. Run the full automated pipeline:**
 ```bash
 python src/run_all.py
 ```
 
-Results will be available in `metrics/metrics_auto.json` and `reflection/reflection.md`.
+`run_all.py` automatically installs all required dependencies, cleans the raw dataset, generates review groups, personas, specifications, and validation tests using the LLM, and computes metrics. No manual setup is required beyond providing a valid API key (see Notes below).
+
+**2. Validate that all required files were generated:**
+```bash
+python src/00_validate_repo.py
+```
+
+Results will be available in `metrics/metrics_auto.json`. For a full comparison across all three pipelines see `metrics/metrics_summary.json`, and for a discussion of findings see `reflection/reflection.md`.
 
 ## Notes
 
-- The automated pipeline requires a valid `GROQ_API_KEY` set in a `.env` file in the project root.
+- The automated pipeline requires a valid `GROQ_API_KEY` set in a `.env` file in the project root:
+  ```
+  GROQ_API_KEY=your_key_here
+  ```
 - All LLM calls use `meta-llama/llama-4-scout-17b-16e-instruct` via the Groq API.
+- The `.env` file is listed in `.gitignore` and will not be committed to the repository.
+- Dependencies installed automatically by `run_all.py`: `nltk`, `spacy`, `num2words`, `openai`, `python-dotenv`, and the `en_core_web_sm` spaCy language model.

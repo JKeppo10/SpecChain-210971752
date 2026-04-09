@@ -1,89 +1,89 @@
 # Requirement ID: FR_auto_1
-- Description: The system shall provide a variety of meditation sessions with different durations to accommodate users with limited time.
-- Source Persona: The Serene Seeker
+- Description: The system shall provide a meditation session catalog with sessions of varying durations.
+- Source Persona: The Seeking Serenity User
 - Traceability: Derived from review group G1
-- Acceptance Criteria: Given the user is on the meditation library page, When the user filters sessions by duration, Then the system displays a list of sessions with durations ranging from 5 to 60 minutes.
+- Acceptance Criteria: Given the user navigates to the meditation session catalog, When the user views the catalog, Then the system displays a list of meditation sessions with durations of 5, 10, and 20 minutes.
 
 # Requirement ID: FR_auto_2
-- Description: The system shall allow users to set a daily meditation reminder to help them stay motivated.
-- Source Persona: The Serene Seeker
+- Description: The system shall allow users to track their daily meditation practice.
+- Source Persona: The Seeking Serenity User
 - Traceability: Derived from review group G1
-- Acceptance Criteria: Given the user is on the settings page, When the user enables daily reminders, Then the system sends a daily notification to the user at a chosen time to meditate.
+- Acceptance Criteria: Given the user completes a meditation session, When the user views their meditation history, Then the system displays a record of the completed session, including date, time, and duration.
 
 # Requirement ID: NFR_auto_1
-- Description: The system shall ensure that meditation sessions load within 2 seconds to provide a seamless user experience.
-- Source Persona: The Serene Seeker
+- Description: The system shall provide a user-friendly interface for easy navigation.
+- Source Persona: The Seeking Serenity User
 - Traceability: Derived from review group G1
-- Acceptance Criteria: Given the user is on a meditation session page, When the user clicks play, Then the session starts playing within 2 seconds.
+- Acceptance Criteria: Given the user is new to the app, When the user launches the app, Then the system displays a clear and intuitive navigation menu, allowing the user to easily access meditation sessions, history, and settings within 2 seconds.
 
 # Requirement ID: FR_auto_3
-- Description: The system shall provide a free version with a limited selection of meditation and sleep content.
+- Description: The system shall provide a free trial with access to a limited set of meditation and sleep content without requiring payment information.
 - Source Persona: The Frustrated Saver
 - Traceability: Derived from review group G2
-- Acceptance Criteria: Given the user has not subscribed to a paid plan, When they open the app, Then they can access a curated list of free meditation and sleep content.
+- Acceptance Criteria: Given the user is on the app's home screen, When the user selects the 'Try for Free' option, Then the user is granted access to a limited set of meditation and sleep content for a specified trial period without being prompted to enter payment information.
 
 # Requirement ID: FR_auto_4
-- Description: The system shall offer a free trial period for new users to try out the app's premium features.
+- Description: The system shall clearly display its pricing and subscription model information.
 - Source Persona: The Frustrated Saver
 - Traceability: Derived from review group G2
-- Acceptance Criteria: Given the user has not subscribed to a paid plan, When they sign up for the app, Then they are offered a 7-day free trial period to access all premium features.
+- Acceptance Criteria: Given the user is on the app's settings or help screen, When the user selects the 'Pricing' or 'Subscription' option, Then the user is presented with a clear and concise breakdown of the app's pricing plans, including any free trial details, upgrade and downgrade options, and cancellation policies.
 
 # Requirement ID: NFR_auto_2
-- Description: The system shall provide transparent and flexible subscription management options.
+- Description: The system shall ensure that the user experience is not degraded by excessive ads or prompts to upgrade to a paid plan during the free trial period.
 - Source Persona: The Frustrated Saver
 - Traceability: Derived from review group G2
-- Acceptance Criteria: Given the user has an active subscription, When they access the app's settings, Then they can easily view their current plan, change their subscription plan, or cancel their subscription in a clear and straightforward process.
+- Acceptance Criteria: Given the user is within the free trial period, When the user interacts with the app, Then the user is not presented with more than two ads or upgrade prompts per session, and these prompts do not interrupt the user's current activity.
 
 # Requirement ID: FR_auto_5
-- Description: The system shall provide a search function that allows users to find specific types of content.
-- Source Persona: The Discerning User
+- Description: The system shall provide a library of meditation and sleep stories that can be easily browsed and played.
+- Source Persona: The Content Critic
 - Traceability: Derived from review group G3
-- Acceptance Criteria: Given the user is on the home screen, When the user taps the search icon, Then a search bar appears, and the user can enter keywords to find specific content.
+- Acceptance Criteria: Given the user is on the home screen, When they tap on the 'Stories' tab, Then they see a list of available stories, and can play a story by tapping on it.
 
 # Requirement ID: FR_auto_6
-- Description: The system shall provide a navigation menu that allows users to easily access various features and meditations.
-- Source Persona: The Discerning User
+- Description: The system shall allow users to search for specific types of relaxing content, including stories and sounds.
+- Source Persona: The Content Critic
 - Traceability: Derived from review group G3
-- Acceptance Criteria: Given the user is on the home screen, When the user taps the navigation menu icon, Then a menu appears with clear and concise labels for features such as 'Meditate', 'Sleep', and 'Library'.
+- Acceptance Criteria: Given the user is on the home screen, When they tap on the 'Search' icon, Then they can enter a search query, and see a list of relevant results, including stories and sounds.
 
 # Requirement ID: NFR_auto_3
-- Description: The system shall ensure that the app's interface is simple and intuitive, allowing users to easily discover new content.
-- Source Persona: The Discerning User
+- Description: The system shall ensure that the app's interface is intuitive and easy to navigate for users with limited technical expertise.
+- Source Persona: The Content Critic
 - Traceability: Derived from review group G3
-- Acceptance Criteria: Given a new user with no prior experience with the app, When the user launches the app, Then the user can find and play a meditation or sleep story within 2 minutes, and the user rates the ease of use as 4 or 5 out of 5.
+- Acceptance Criteria: Given a new user with limited technical expertise, When they launch the app for the first time, Then they can complete a guided meditation session within 5 minutes, without needing additional support or guidance.
 
 # Requirement ID: FR_auto_7
-- Description: The system shall provide a simple and secure login process.
+- Description: The system shall allow users to successfully log in to their account.
 - Source Persona: The Frustrated Tech User
 - Traceability: Derived from review group G4
-- Acceptance Criteria: Given the user has a valid account, When the user attempts to log in, Then the user is successfully logged in and redirected to the home screen.
+- Acceptance Criteria: Given a user has a valid Calm account, When the user attempts to log in, Then they are able to access their account without error.
 
 # Requirement ID: FR_auto_8
-- Description: The system shall provide clear instructions for troubleshooting common technical issues.
+- Description: The system shall play meditation and sleep content without interruption.
 - Source Persona: The Frustrated Tech User
 - Traceability: Derived from review group G4
-- Acceptance Criteria: Given the user encounters a technical issue, When the user accesses the help menu, Then the user is presented with step-by-step instructions for resolving the issue.
+- Acceptance Criteria: Given a user has a stable internet connection, When they select a meditation or sleep track, Then the track plays continuously without glitching or freezing.
 
 # Requirement ID: NFR_auto_4
-- Description: The system shall have a user interface that is easy to navigate for someone with limited technical expertise.
+- Description: The system shall ensure a high level of reliability and stability.
 - Source Persona: The Frustrated Tech User
 - Traceability: Derived from review group G4
-- Acceptance Criteria: Given the user has limited technical expertise, When the user interacts with the app, Then the user can easily find and access the app's features with minimal confusion or frustration.
+- Acceptance Criteria: Given the app is running on a compatible device and operating system, When the user interacts with the app, Then the app remains responsive and functional, with a crash rate of less than 1%.
 
 # Requirement ID: FR_auto_9
-- Description: The system shall provide a clear and prominent display of its unique features and content on the app's main screen.
-- Source Persona: The Frugal Skeptic
+- Description: The system shall provide a clear and straightforward cancellation process for users to cancel their subscription.
+- Source Persona: The Frustrated Subscriber
 - Traceability: Derived from review group G5
-- Acceptance Criteria: Given the user opens the app for the first time, When they view the main screen, Then they see a prominent section highlighting Calm's exclusive content and features that differentiate it from free alternatives.
+- Acceptance Criteria: Given the user is logged in, When they navigate to the account settings, Then they can find a 'Cancel Subscription' option.
 
 # Requirement ID: FR_auto_10
-- Description: The system shall offer a personalized content recommendation feature that suggests meditation and sleep sessions based on the user's interests and goals.
-- Source Persona: The Frugal Skeptic
+- Description: The system shall allow users to easily stop recurring payments after canceling their subscription.
+- Source Persona: The Frustrated Subscriber
 - Traceability: Derived from review group G5
-- Acceptance Criteria: Given the user has completed a profile with their interests and goals, When they access the meditation or sleep section, Then they see a list of recommended sessions tailored to their needs.
+- Acceptance Criteria: Given the user has canceled their subscription, When they review their account status, Then they see a confirmation that their subscription has been canceled and no further payments will be taken.
 
 # Requirement ID: NFR_auto_5
-- Description: The system shall provide a seamless and intuitive user experience, allowing users to easily find and access content that meets their needs.
-- Source Persona: The Frugal Skeptic
+- Description: The system shall provide a secure and transparent way to manage recurring payments, preventing perceived fraud or unfair practices.
+- Source Persona: The Frustrated Subscriber
 - Traceability: Derived from review group G5
-- Acceptance Criteria: Given the user is searching for a specific type of meditation or sleep content, When they use the search function or navigate through the app, Then they can find relevant content within 3 clicks and access it within 2 seconds.
+- Acceptance Criteria: Given the user initiates a cancellation, When the system processes the request, Then the user receives a clear and timely confirmation of the cancellation, and their payment method is not charged again.

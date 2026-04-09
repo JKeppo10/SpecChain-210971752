@@ -7,6 +7,7 @@ Executes the full automated pipeline from start to finish.
 Does NOT run manual or hybrid steps (those require human judgment).
 
 Steps executed:
+    0. Install dependencies
     1. 02_clean.py          → loads raw reviews and produces cleaned dataset
     2. 05_personas_auto.py  → groups reviews + generates personas (LLM)
     3. 06_spec_generate.py  → generates specifications (LLM)
@@ -27,6 +28,46 @@ Usage:
 import subprocess
 import sys
 import os
+
+
+# ── All pip packages required by the pipeline ─────────────────────────────────
+PIP_PACKAGES = [
+    "nltk",
+    "spacy",
+    "num2words",
+    "openai",
+    "python-dotenv",
+]
+
+# ── spaCy model required by 02_clean.py ───────────────────────────────────────
+SPACY_MODEL = "en_core_web_sm"
+
+
+def install_dependencies():
+    """Install all required pip packages and the spaCy language model."""
+    print("\n" + "="*60)
+    print("  STEP 0: Installing dependencies")
+    print("="*60)
+
+    print("  Installing pip packages...")
+    result = subprocess.run(
+        [sys.executable, "-m", "pip", "install", "--quiet"] + PIP_PACKAGES
+    )
+    if result.returncode != 0:
+        print("  ERROR: pip install failed. Check your internet connection.")
+        sys.exit(result.returncode)
+    print("  pip packages installed.")
+
+    print(f"  Downloading spaCy model '{SPACY_MODEL}'...")
+    result = subprocess.run(
+        [sys.executable, "-m", "spacy", "download", SPACY_MODEL, "--quiet"]
+    )
+    if result.returncode != 0:
+        print(f"  ERROR: Failed to download spaCy model '{SPACY_MODEL}'.")
+        sys.exit(result.returncode)
+    print(f"  spaCy model '{SPACY_MODEL}' ready.")
+
+    print("\n  Step 0 complete.")
 
 
 def run_step(step_num: int, description: str, script: str, piped_input: str = None):
@@ -61,6 +102,9 @@ def main():
         print("ERROR: Please run this script from the project root directory.")
         print("  Usage: python src/run_all.py")
         sys.exit(1)
+
+    # ── Step 0: Install dependencies ──────────────────────────────
+    install_dependencies()
 
     # ── Step 1: Load raw dataset and clean ────────────────────────
     # Reads:   data/reviews_raw.jsonl

@@ -3,207 +3,202 @@
     {
       "test_id": "T_auto_1",
       "requirement_id": "FR_auto_1",
-      "scenario": "Validates that meditation sessions are displayed for different durations when filtering by duration.",
+      "scenario": "Validation of meditation session catalog display.",
       "steps": [
-        "Step 1: Launch the Calm app and navigate to the meditation library page.",
-        "Step 2: Apply a filter for sessions with a duration of 10 minutes.",
-        "Step 3: Verify that the displayed sessions have a duration of 10 minutes."
+        "Step 1: Launch the Calm app on an Android device.",
+        "Step 2: Navigate to the meditation session catalog.",
+        "Step 3: Verify the list of meditation sessions displayed."
       ],
-      "expected_result": "The system displays a list of meditation sessions with a duration of 10 minutes."
+      "expected_result": "The system displays a list of meditation sessions with durations of 5, 10, and 20 minutes."
     },
     {
       "test_id": "T_auto_2",
       "requirement_id": "FR_auto_1",
-      "scenario": "Validates that meditation sessions are displayed for the full range of durations (5-60 minutes).",
+      "scenario": "Validation of meditation session duration variety.",
       "steps": [
-        "Step 1: Launch the Calm app and navigate to the meditation library page.",
-        "Step 2: Apply filters for sessions with durations of 5, 30, and 60 minutes.",
-        "Step 3: Verify that sessions for each of these durations are displayed."
+        "Step 1: Launch the Calm app on an Android device.",
+        "Step 2: Navigate to the meditation session catalog.",
+        "Step 3: Check the durations of at least 3 meditation sessions."
       ],
-      "expected_result": "The system displays lists of meditation sessions for durations of 5, 30, and 60 minutes."
+      "expected_result": "At least one meditation session of 5 minutes, one of 10 minutes, and one of 20 minutes are present in the catalog."
     },
     {
       "test_id": "T_auto_3",
       "requirement_id": "FR_auto_2",
-      "scenario": "Validates daily reminder notification is sent at chosen time.",
+      "scenario": "Validates that a completed meditation session is displayed in the user's meditation history.",
       "steps": [
-        "Step 1: Log in to the Calm app.",
-        "Step 2: Navigate to the settings page.",
-        "Step 3: Enable daily reminders and choose a reminder time.",
-        "Step 4: Wait for the chosen reminder time to arrive.",
-        "Step 5: Verify a meditation reminder notification is received."
+        "Step 1: Launch the Calm app and navigate to the meditation section.",
+        "Step 2: Complete a meditation session.",
+        "Step 3: Navigate to the meditation history section."
       ],
-      "expected_result": "A daily meditation reminder notification is received at the chosen time."
+      "expected_result": "The completed meditation session is listed, including date, time, and duration."
     },
     {
       "test_id": "T_auto_4",
       "requirement_id": "FR_auto_2",
-      "scenario": "Validates daily reminder setting is saved and applied.",
+      "scenario": "Validates that multiple completed meditation sessions are displayed in the user's meditation history.",
       "steps": [
-        "Step 1: Log in to the Calm app.",
-        "Step 2: Navigate to the settings page.",
-        "Step 3: Enable daily reminders and choose a reminder time.",
-        "Step 4: Close and reopen the app.",
-        "Step 5: Navigate to the settings page again.",
-        "Step 6: Verify daily reminders are still enabled with the chosen reminder time."
+        "Step 1: Launch the Calm app and navigate to the meditation section.",
+        "Step 2: Complete two separate meditation sessions with different durations.",
+        "Step 3: Navigate to the meditation history section."
       ],
-      "expected_result": "Daily reminder settings are saved and applied across app sessions."
+      "expected_result": "Both completed meditation sessions are listed, including date, time, and duration for each session."
     },
     {
       "test_id": "T_auto_5",
       "requirement_id": "NFR_auto_1",
-      "scenario": "Validates meditation session loads within 2 seconds on a stable network.",
+      "scenario": "Navigation menu display time validation",
       "steps": [
-        "Step 1: Launch the Calm app and navigate to a meditation session page.",
-        "Step 2: Click the play button to start the meditation session.",
-        "Step 3: Measure the time it takes for the session to start playing."
+        "Step 1: Launch the Calm app on an Android device.",
+        "Step 2: Measure the time taken for the navigation menu to appear.",
+        "Step 3: Verify that the navigation menu is fully loaded and interactive."
       ],
-      "expected_result": "The meditation session starts playing within 2 seconds."
+      "expected_result": "The navigation menu is displayed within 2 seconds of launching the app."
     },
     {
       "test_id": "T_auto_6",
       "requirement_id": "NFR_auto_1",
-      "scenario": "Validates meditation session loads within 2 seconds on a slow network.",
+      "scenario": "Navigation menu accessibility validation",
       "steps": [
-        "Step 1: Enable a slow network connection (e.g. 2G) on the device.",
-        "Step 2: Launch the Calm app and navigate to a meditation session page.",
-        "Step 3: Click the play button to start the meditation session and measure the time it takes for the session to start playing."
+        "Step 1: Launch the Calm app on an Android device.",
+        "Step 2: Verify that the navigation menu is clearly visible and intuitive.",
+        "Step 3: Check that the user can easily access meditation sessions, history, and settings from the navigation menu."
       ],
-      "expected_result": "The meditation session starts playing within 2 seconds."
+      "expected_result": "The user can easily access meditation sessions, history, and settings from the navigation menu."
     },
     {
       "test_id": "T_auto_7",
       "requirement_id": "FR_auto_3",
-      "scenario": "Validate free content is accessible without subscription",
+      "scenario": "Validates that the free trial is granted without payment information",
       "steps": [
-        "Launch the Calm app on an Android device.",
-        "Verify the user is not logged in or subscribed to a paid plan.",
-        "Navigate to the meditation or sleep content section."
+        "Step 1: Launch the Calm app and navigate to the home screen.",
+        "Step 2: Select the 'Try for Free' option.",
+        "Step 3: Verify that the user is granted access to a limited set of meditation and sleep content."
       ],
-      "expected_result": "The user can view a curated list of free meditation and sleep content."
+      "expected_result": "The user is granted access to a limited set of meditation and sleep content for a specified trial period without being prompted to enter payment information."
     },
     {
       "test_id": "T_auto_8",
       "requirement_id": "FR_auto_3",
-      "scenario": "Validate free content limitations without subscription",
+      "scenario": "Validates that the free trial content is limited",
       "steps": [
-        "Launch the Calm app on an Android device.",
-        "Verify the user is not logged in or subscribed to a paid plan.",
-        "Navigate to the meditation or sleep content section.",
-        "Compare the available content with the content available after subscribing to a paid plan."
+        "Step 1: Launch the Calm app and navigate to the home screen.",
+        "Step 2: Select the 'Try for Free' option.",
+        "Step 3: Browse through the available meditation and sleep content."
       ],
-      "expected_result": "The user can access a limited selection of meditation and sleep content compared to the paid plan."
+      "expected_result": "The user can only access a limited set of meditation and sleep content, and is not able to access the full library of content."
     },
     {
       "test_id": "T_auto_9",
       "requirement_id": "FR_auto_4",
-      "scenario": "Validates that a new user is offered a 7-day free trial period when signing up.",
+      "scenario": "Validates that pricing information is displayed on selecting 'Pricing' option",
       "steps": [
-        "Step 1: Launch the Calm app and navigate to the sign-up page.",
-        "Step 2: Enter valid sign-up information and complete the registration process.",
-        "Step 3: Verify that the user is logged in and has access to premium features."
+        "Launch the Calm app on an Android device.",
+        "Navigate to the app's settings or help screen.",
+        "Select the 'Pricing' option."
       ],
-      "expected_result": "The user is offered a 7-day free trial period to access all premium features."
+      "expected_result": "The app displays a clear and concise breakdown of its pricing plans, including free trial details, upgrade and downgrade options, and cancellation policies."
     },
     {
       "test_id": "T_auto_10",
       "requirement_id": "FR_auto_4",
-      "scenario": "Validates that an existing non-paying user is not offered another free trial period.",
+      "scenario": "Validates that subscription model information is displayed on selecting 'Subscription' option",
       "steps": [
-        "Step 1: Launch the Calm app and navigate to the account settings.",
-        "Step 2: Verify that the user has used up their previous 7-day free trial period.",
-        "Step 3: Attempt to access a premium feature without subscribing to a paid plan."
+        "Launch the Calm app on an Android device.",
+        "Navigate to the app's settings or help screen.",
+        "Select the 'Subscription' option."
       ],
-      "expected_result": "The user is not offered another free trial period and is prompted to subscribe to a paid plan to access premium features."
+      "expected_result": "The app presents a clear and concise breakdown of its subscription model, including free trial details, upgrade and downgrade options, and cancellation policies."
     },
     {
       "test_id": "T_auto_11",
       "requirement_id": "NFR_auto_2",
-      "scenario": "User views current plan and subscription details",
+      "scenario": "Validates that the user is not presented with more than two ads or upgrade prompts per session during the free trial period.",
       "steps": [
-        "Launch the Calm app on an Android device.",
-        "Log in to an account with an active subscription.",
-        "Navigate to the app's settings section."
+        "Step 1: Launch the Calm app and ensure the user is within the free trial period.",
+        "Step 2: Interact with the app by navigating through multiple features (e.g., meditation sessions, sleep stories).",
+        "Step 3: Verify that the user is presented with two or fewer ads or upgrade prompts during the session."
       ],
-      "expected_result": "The user can clearly see their current subscription plan and details."
+      "expected_result": "The user experiences no more than two ads or upgrade prompts and can interact with the app without interruptions."
     },
     {
       "test_id": "T_auto_12",
       "requirement_id": "NFR_auto_2",
-      "scenario": "User cancels their subscription",
+      "scenario": "Validates that ads or upgrade prompts do not interrupt the user's current activity during the free trial period.",
       "steps": [
-        "Launch the Calm app on an Android device.",
-        "Log in to an account with an active subscription.",
-        "Navigate to the app's settings section and select the option to cancel subscription."
+        "Step 1: Launch the Calm app and ensure the user is within the free trial period.",
+        "Step 2: Start a meditation session.",
+        "Step 3: Verify that an ad or upgrade prompt does not appear while the meditation session is in progress."
       ],
-      "expected_result": "The user's subscription is successfully canceled, and they are notified of the cancellation."
+      "expected_result": "The meditation session continues uninterrupted by ads or upgrade prompts."
     },
     {
       "test_id": "T_auto_13",
       "requirement_id": "FR_auto_5",
-      "scenario": "Search bar appears when search icon is tapped",
+      "scenario": "Validates that the 'Stories' tab displays a list of available stories.",
       "steps": [
-        "Launch the Calm app and navigate to the home screen",
-        "Tap the search icon",
-        "Verify the search bar is displayed on the screen"
+        "Step 1: Launch the Calm app and ensure the home screen is displayed.",
+        "Step 2: Tap on the 'Stories' tab.",
+        "Step 3: Verify that a list of stories is displayed."
       ],
-      "expected_result": "The search bar is visible and ready for user input"
+      "expected_result": "A list of meditation and sleep stories is displayed."
     },
     {
       "test_id": "T_auto_14",
       "requirement_id": "FR_auto_5",
-      "scenario": "Search function returns relevant results",
+      "scenario": "Validates that a story can be played by tapping on it.",
       "steps": [
-        "Launch the Calm app and navigate to the home screen",
-        "Tap the search icon",
-        "Enter a keyword (e.g. 'relaxation') in the search bar",
-        "Submit the search query"
+        "Step 1: Launch the Calm app and ensure the home screen is displayed.",
+        "Step 2: Tap on the 'Stories' tab.",
+        "Step 3: Select a story from the list by tapping on it."
       ],
-      "expected_result": "A list of relevant content (e.g. meditations, sleep stories, etc.) is displayed"
+      "expected_result": "The selected story starts playing."
     },
     {
       "test_id": "T_auto_15",
       "requirement_id": "FR_auto_6",
-      "scenario": "Navigation menu appears with expected labels when icon is tapped",
+      "scenario": "Valid search query returns relevant results",
       "steps": [
-        "Step 1: Launch the Calm app and ensure the home screen is displayed.",
-        "Step 2: Tap the navigation menu icon.",
-        "Step 3: Verify the menu contains labels for 'Meditate', 'Sleep', and 'Library'."
+        "Step 1: Launch the Calm app and navigate to the home screen.",
+        "Step 2: Tap on the 'Search' icon.",
+        "Step 3: Enter a search query for a specific type of relaxing content (e.g. 'rain').",
+        "Step 4: Verify that the search results include both stories and sounds related to the query."
       ],
-      "expected_result": "The navigation menu appears with clear and concise labels for 'Meditate', 'Sleep', and 'Library'."
+      "expected_result": "The app displays a list of relevant results, including both stories and sounds that match the search query."
     },
     {
       "test_id": "T_auto_16",
       "requirement_id": "FR_auto_6",
-      "scenario": "Navigation menu does not appear when icon is not tapped",
+      "scenario": "Empty search query returns no results",
       "steps": [
-        "Step 1: Launch the Calm app and ensure the home screen is displayed.",
-        "Step 2: Do not tap the navigation menu icon.",
-        "Step 3: Verify the home screen remains unchanged."
+        "Step 1: Launch the Calm app and navigate to the home screen.",
+        "Step 2: Tap on the 'Search' icon.",
+        "Step 3: Enter an empty search query (i.e. tap search without entering text).",
+        "Step 4: Verify that the app displays an empty or filtered list of results."
       ],
-      "expected_result": "The navigation menu does not appear and the home screen remains unchanged."
+      "expected_result": "The app does not crash and displays a message or empty list indicating no results found for an empty search query."
     },
     {
       "test_id": "T_auto_17",
       "requirement_id": "NFR_auto_3",
-      "scenario": "Validates that a new user can find and play a meditation or sleep story within 2 minutes.",
+      "scenario": "Validates that a new user can launch the app and access the guided meditation session.",
       "steps": [
-        "Step 1: Launch the Calm app for the first time.",
-        "Step 2: Observe the app's initial screen and navigate through the app to find a meditation or sleep story.",
-        "Step 3: Play a meditation or sleep story and note the time taken to complete these steps."
+        "Step 1: Launch the Calm app for the first time on an Android device.",
+        "Step 2: Verify that the app's home screen is displayed with a clear call-to-action to start a meditation session.",
+        "Step 3: Tap on the 'Start' button to begin a guided meditation session."
       ],
-      "expected_result": "The user is able to find and play a meditation or sleep story within 2 minutes."
+      "expected_result": "The app navigates to the guided meditation session screen and starts playing the meditation audio within 1 minute."
     },
     {
       "test_id": "T_auto_18",
       "requirement_id": "NFR_auto_3",
-      "scenario": "Validates that the user rates the ease of use as 4 or 5 out of 5.",
+      "scenario": "Validates that a new user can complete a guided meditation session within 5 minutes.",
       "steps": [
-        "Step 1: Launch the Calm app for the first time.",
-        "Step 2: Complete a meditation or sleep story.",
-        "Step 3: Respond to the in-app survey rating the ease of use."
+        "Step 1: Launch the Calm app for the first time on an Android device and start a guided meditation session.",
+        "Step 2: Follow the guided meditation session and verify that the session duration is displayed correctly.",
+        "Step 3: Complete the guided meditation session and verify the end screen with relevant recommendations."
       ],
-      "expected_result": "The user rates the ease of use as 4 or 5 out of 5."
+      "expected_result": "The user can complete the guided meditation session within 5 minutes, and the app provides a completion screen with recommendations for future sessions."
     },
     {
       "test_id": "T_auto_19",
@@ -211,131 +206,134 @@
       "scenario": "Valid login credentials",
       "steps": [
         "Launch the Calm app on an Android device",
-        "Enter a valid email address and password for an existing account",
-        "Tap the login button"
+        "Tap on the 'Log In' button",
+        "Enter a valid email address and password associated with a Calm account",
+        "Tap on the 'Log In' button"
       ],
-      "expected_result": "The user is successfully logged in and redirected to the home screen"
+      "expected_result": "The user is successfully logged in and redirected to the home screen of their account."
     },
     {
       "test_id": "T_auto_20",
       "requirement_id": "FR_auto_7",
-      "scenario": "Login with empty credentials",
+      "scenario": "Invalid login credentials",
       "steps": [
         "Launch the Calm app on an Android device",
-        "Leave the email address and password fields empty",
-        "Tap the login button"
+        "Tap on the 'Log In' button",
+        "Enter an invalid email address or password that does not match a Calm account",
+        "Tap on the 'Log In' button"
       ],
-      "expected_result": "The app displays an error message indicating that email and password are required"
+      "expected_result": "The user is presented with an error message indicating that the login credentials are incorrect."
     },
     {
       "test_id": "T_auto_21",
       "requirement_id": "FR_auto_8",
-      "scenario": "Validates that the help menu is accessible when a technical issue occurs.",
+      "scenario": "Validates continuous playback with stable internet connection",
       "steps": [
-        "Simulate a technical issue (e.g. playback error) within the app.",
-        "Navigate to the help menu.",
-        "Verify the help menu contains a list of troubleshooting options."
+        "Step 1: Launch the Calm app on an Android device with a stable internet connection.",
+        "Step 2: Select a meditation or sleep track to start playing.",
+        "Step 3: Verify the track plays continuously for at least 5 minutes without interruption."
       ],
-      "expected_result": "The help menu is accessible and contains troubleshooting options."
+      "expected_result": "The selected track plays continuously without glitching or freezing."
     },
     {
       "test_id": "T_auto_22",
       "requirement_id": "FR_auto_8",
-      "scenario": "Validates that step-by-step instructions are provided for a common technical issue.",
+      "scenario": "Validates continuous playback when internet connection is temporarily lost",
       "steps": [
-        "Access the help menu.",
-        "Select a common technical issue (e.g. 'Audio not playing').",
-        "Verify the instructions provided are step-by-step and clear."
+        "Step 1: Launch the Calm app on an Android device with a stable internet connection.",
+        "Step 2: Start playing a meditation or sleep track.",
+        "Step 3: Temporarily disable the internet connection (e.g., enable airplane mode) for 10 seconds.",
+        "Step 4: Re-enable the internet connection."
       ],
-      "expected_result": "Clear, step-by-step instructions are provided for resolving the selected technical issue."
+      "expected_result": "The track resumes playback continuously without glitching or freezing after the internet connection is re-established."
     },
     {
       "test_id": "T_auto_23",
       "requirement_id": "NFR_auto_4",
-      "scenario": "Validates that a user with limited technical expertise can easily find the meditation feature.",
+      "scenario": "Validate app responsiveness during meditation session",
       "steps": [
-        "Launch the Calm app on an Android device.",
-        "Observe the home screen and identify the main navigation options.",
-        "Tap on the 'Meditate' option and verify that the meditation screen is displayed."
+        "Step 1: Launch the Calm app on a compatible device and operating system.",
+        "Step 2: Start a meditation session and interact with the app (e.g., pause, resume, adjust volume).",
+        "Step 3: Verify the app remains responsive and functional throughout the session."
       ],
-      "expected_result": "The user can easily find and access the meditation feature with clear navigation and minimal confusion."
+      "expected_result": "The app remains responsive and functional, with no crashes or freezes."
     },
     {
       "test_id": "T_auto_24",
       "requirement_id": "NFR_auto_4",
-      "scenario": "Validates that a user with limited technical expertise can easily access sleep stories.",
+      "scenario": "Validate crash rate during prolonged usage",
       "steps": [
-        "Launch the Calm app on an Android device.",
-        "Navigate to the 'Sleep' section using the main navigation options.",
-        "Select a sleep story and verify that it starts playing without difficulty."
+        "Step 1: Launch the Calm app on a compatible device and operating system.",
+        "Step 2: Use the app for an extended period (e.g., 2 hours) with multiple sessions and interactions.",
+        "Step 3: Monitor the app's performance and track any crashes."
       ],
-      "expected_result": "The user can easily find and access sleep stories with clear navigation and minimal confusion."
+      "expected_result": "The app crashes less than 1% of the time during the prolonged usage period."
     },
     {
       "test_id": "T_auto_25",
       "requirement_id": "FR_auto_9",
-      "scenario": "Validates that the main screen displays a prominent section highlighting Calm's exclusive content and features on first app launch.",
+      "scenario": "User can find 'Cancel Subscription' option when logged in and navigating to account settings.",
       "steps": [
-        "Launch the Calm app for the first time on an Android device.",
-        "Observe the main screen displayed after the initial launch.",
-        "Verify the presence of a prominent section showcasing Calm's exclusive content and features."
+        "Step 1: Launch the Calm app and log in with a valid account.",
+        "Step 2: Navigate to the account settings section.",
+        "Step 3: Verify that the 'Cancel Subscription' option is visible."
       ],
-      "expected_result": "The main screen displays a prominent section highlighting Calm's exclusive content and features that differentiate it from free alternatives."
+      "expected_result": "The 'Cancel Subscription' option is displayed in the account settings."
     },
     {
       "test_id": "T_auto_26",
       "requirement_id": "FR_auto_9",
-      "scenario": "Validates that the prominent section is clearly visible and distinguishable from other content on the main screen.",
+      "scenario": "Cancellation process is accessible when user is logged out and then logs back in.",
       "steps": [
-        "Launch the Calm app on an Android device.",
-        "Navigate to the main screen if not already there.",
-        "Compare the visual prominence of the section highlighting Calm's exclusive content and features with other displayed content."
+        "Step 1: Launch the Calm app and ensure the user is logged out.",
+        "Step 2: Log in with a valid account and navigate to the account settings section.",
+        "Step 3: Verify that the 'Cancel Subscription' option is visible."
       ],
-      "expected_result": "The section highlighting Calm's exclusive content and features is clearly visible and distinguishable from other content on the main screen through its design, size, or placement."
+      "expected_result": "The 'Cancel Subscription' option is displayed in the account settings after logging back in."
     },
     {
       "test_id": "T_auto_27",
       "requirement_id": "FR_auto_10",
-      "scenario": "Validates that recommended sessions are displayed when user has completed profile.",
+      "scenario": "Validates that a canceled subscription shows a confirmation message.",
       "steps": [
-        "Step 1: Launch the Calm app and complete the user profile with interests and goals.",
-        "Step 2: Access the meditation section.",
-        "Step 3: Verify that a list of recommended meditation sessions is displayed."
+        "Launch the Calm app and navigate to the account settings.",
+        "Cancel the user's subscription.",
+        "Review the account status."
       ],
-      "expected_result": "A list of recommended meditation sessions tailored to the user's interests and goals is displayed."
+      "expected_result": "The user sees a confirmation message stating that their subscription has been canceled."
     },
     {
       "test_id": "T_auto_28",
       "requirement_id": "FR_auto_10",
-      "scenario": "Validates that recommended sessions change based on user's interests and goals.",
+      "scenario": "Validates that no further payments are taken after canceling a subscription.",
       "steps": [
-        "Step 1: Launch the Calm app and complete the user profile with interests and goals (e.g., stress, relaxation).",
-        "Step 2: Access the sleep section and verify the recommended sleep sessions.",
-        "Step 3: Update the user profile with different interests and goals (e.g., focus, productivity) and re-access the sleep section."
+        "Launch the Calm app and navigate to the account settings.",
+        "Cancel the user's subscription.",
+        "Verify the payment method associated with the subscription."
       ],
-      "expected_result": "The list of recommended sleep sessions changes to match the new interests and goals."
+      "expected_result": "No further payments are scheduled or processed for the user's subscription."
     },
     {
       "test_id": "T_auto_29",
       "requirement_id": "NFR_auto_5",
-      "scenario": "Validates search function accessibility",
+      "scenario": "Validates cancellation confirmation message",
       "steps": [
-        "Step 1: Launch the Calm app and navigate to the home screen.",
-        "Step 2: Tap on the search icon and enter a specific type of meditation or sleep content (e.g., 'guided meditation for stress').",
-        "Step 3: Verify the search results are displayed and tap on a relevant result."
+        "Step 1: Log in to the Calm app with a valid account that has an active subscription.",
+        "Step 2: Navigate to the subscription management section.",
+        "Step 3: Initiate cancellation of the subscription."
       ],
-      "expected_result": "The selected content loads within 2 seconds and is accessible."
+      "expected_result": "The user receives a clear and timely confirmation of the cancellation."
     },
     {
       "test_id": "T_auto_30",
       "requirement_id": "NFR_auto_5",
-      "scenario": "Validates navigation accessibility",
+      "scenario": "Validates that payment method is not charged after cancellation",
       "steps": [
-        "Step 1: Launch the Calm app and navigate to the home screen.",
-        "Step 2: Navigate through the app's categories (e.g., Meditation, Sleep, Music) to find a specific type of content (e.g., 'sleep stories').",
-        "Step 3: Tap on a relevant content item to access it."
+        "Step 1: Log in to the Calm app with a valid account that has an active subscription.",
+        "Step 2: Navigate to the subscription management section and initiate cancellation of the subscription.",
+        "Step 3: Verify the next billing cycle that the payment method is not charged again."
       ],
-      "expected_result": "The selected content is accessible within 3 clicks and loads within 2 seconds."
+      "expected_result": "The user's payment method is not charged again after cancellation."
     }
   ]
 }

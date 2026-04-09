@@ -1,0 +1,43 @@
+{
+  "app_name": "Calm",
+  "app_id": "com.calm.android",
+  "app_store": "Google Play Store",
+  "dataset": {
+    "raw_review_count": 5000,
+    "duplicate_reviews_removed": 178,
+    "short_reviews_removed": 878,
+    "clean_review_count": 3944,
+    "language": "en",
+    "country": "us",
+    "collection_date": "2026-04-08"
+  },
+  "collection_method": {
+    "tool": "google-play-scraper (Python library)",
+    "script": "src/01_collect_or_import.py",
+    "sort_order": "NEWEST",
+    "batch_size": 200,
+    "target_count": 5000,
+    "notes": "All 5000 target reviews were successfully collected. The app had sufficient reviews available to meet the upper limit of the required range (1000-5000)."
+  },
+  "cleaning_decisions": {
+    "script": "src/02_clean.py",
+    "steps": [
+      "Removed duplicate reviews based on exact text match",
+      "Removed empty or extremely short reviews (fewer than 3 words after cleaning)",
+      "Removed emojis and unicode symbols",
+      "Removed punctuation",
+      "Removed special characters",
+      "Converted numbers to their English word equivalents using num2words",
+      "Normalized whitespace (collapsed multiple spaces and newlines)",
+      "Converted all text to lowercase",
+      "Removed English stop words using NLTK stopwords corpus",
+      "Lemmatized tokens using spaCy en_core_web_sm model"
+    ],
+    "libraries_used": [
+      "nltk",
+      "spacy (en_core_web_sm)",
+      "num2words"
+    ],
+    "min_word_threshold": 3
+  }
+}

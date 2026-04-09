@@ -1,16 +1,382 @@
-
 {
   "tests": [
     {
-      "test_id": "T_auto_1",
+      "test_id": "T_FR1_1",
       "requirement_id": "FR1",
-      "scenario": "Workout Logging Stability",
+      "scenario": "Notification Arrives During Active Session",
       "steps": [
-        "Open the workout logging screen",
-        "Enter workout details",
-        "Submit the workout"
+        "Start an audio session",
+        "Trigger a notification from another app while the session is playing",
+        "Observe the state of the audio session"
       ],
-      "expected_result": "The workout is saved successfully and the application remains stable."
+      "expected_result": "The audio session continues playing without pausing, skipping, or terminating."
+    },
+    {
+      "test_id": "T_FR1_2",
+      "requirement_id": "FR1",
+      "scenario": "User Switches Away and Returns During Session",
+      "steps": [
+        "Start an audio session",
+        "Switch to another app while the session is playing",
+        "Return to the Calm app",
+        "Observe the state of the audio session"
+      ],
+      "expected_result": "The audio session has continued playing uninterrupted while the app was in the background and is still playing upon return."
+    },
+    {
+      "test_id": "T_FR2_1",
+      "requirement_id": "FR2",
+      "scenario": "Notification Triggered During Quiet Hours Window",
+      "steps": [
+        "Define a quiet hours window",
+        "Trigger a notification during that window",
+        "Observe whether the notification is delivered"
+      ],
+      "expected_result": "The notification is not delivered to the user during the quiet hours window."
+    },
+    {
+      "test_id": "T_FR2_2",
+      "requirement_id": "FR2",
+      "scenario": "Notification Delivered After Quiet Hours Window Ends",
+      "steps": [
+        "Define a quiet hours window",
+        "Trigger a notification during that window",
+        "Wait for the quiet hours window to end",
+        "Observe whether the notification is delivered"
+      ],
+      "expected_result": "The notification is delivered to the user after the quiet hours window has ended."
+    },
+    {
+      "test_id": "T_FR3_1",
+      "requirement_id": "FR3",
+      "scenario": "Audio Stops When Sleep Timer Elapses",
+      "steps": [
+        "Start an audio session",
+        "Set a sleep timer for a short period",
+        "Wait for the timer to elapse",
+        "Observe the state of audio playback"
+      ],
+      "expected_result": "Audio playback stops when the timer elapses."
+    },
+    {
+      "test_id": "T_FR3_2",
+      "requirement_id": "FR3",
+      "scenario": "Audio Does Not Resume After Sleep Timer Stops It",
+      "steps": [
+        "Start an audio session",
+        "Set a sleep timer for a short period",
+        "Wait for the timer to elapse and audio to stop",
+        "Wait an additional period and observe whether audio resumes"
+      ],
+      "expected_result": "Audio playback does not resume automatically after being stopped by the sleep timer."
+    },
+    {
+      "test_id": "T_FR4_1",
+      "requirement_id": "FR4",
+      "scenario": "Search by Keyword Returns Matching Content",
+      "steps": [
+        "Navigate to the content search",
+        "Enter a keyword such as 'thunderstorm'",
+        "Submit the query",
+        "Observe the results"
+      ],
+      "expected_result": "Content matching the keyword 'thunderstorm' is displayed to the user."
+    },
+    {
+      "test_id": "T_FR4_2",
+      "requirement_id": "FR4",
+      "scenario": "Search by Category Returns Matching Content",
+      "steps": [
+        "Navigate to the content search",
+        "Enter a category such as 'sleep stories'",
+        "Submit the query",
+        "Observe the results"
+      ],
+      "expected_result": "Content belonging to the 'sleep stories' category is displayed to the user."
+    },
+    {
+      "test_id": "T_FR5_1",
+      "requirement_id": "FR5",
+      "scenario": "Unplayed Content Appears Before Played Content",
+      "steps": [
+        "Play one or more content items",
+        "Navigate to the content listing",
+        "Observe the order in which content is presented"
+      ],
+      "expected_result": "Content items the user has not previously played appear before content items the user has already played."
+    },
+    {
+      "test_id": "T_FR5_2",
+      "requirement_id": "FR5",
+      "scenario": "All Content Played — Unplayed Priority Still Applied on New Content",
+      "steps": [
+        "Play all available content items in a category",
+        "Check for any newly added content item in that category",
+        "Navigate to the content listing",
+        "Observe the order in which content is presented"
+      ],
+      "expected_result": "The newly added content item that the user has not played appears before previously played content items."
+    },
+    {
+      "test_id": "T_FR6_1",
+      "requirement_id": "FR6",
+      "scenario": "Higher-Rated Content Appears Before Lower-Rated Content",
+      "steps": [
+        "Rate one content item with a high rating",
+        "Rate another content item in the same category with a lower rating",
+        "Navigate to the content listing for that category",
+        "Observe the order in which the two items are presented"
+      ],
+      "expected_result": "The higher-rated content item appears before the lower-rated content item."
+    },
+    {
+      "test_id": "T_FR6_2",
+      "requirement_id": "FR6",
+      "scenario": "Updating a Rating Changes Content Order",
+      "steps": [
+        "Rate content item A higher than content item B",
+        "Observe that item A appears before item B",
+        "Change the rating of item B to be higher than item A",
+        "Observe the updated order of the two items"
+      ],
+      "expected_result": "After the rating change, content item B now appears before content item A."
+    },
+    {
+      "test_id": "T_FR7_1",
+      "requirement_id": "FR7",
+      "scenario": "Excluded Content Does Not Appear in Recommendations",
+      "steps": [
+        "Exclude a specific content item",
+        "Navigate to the recommendations or content listing",
+        "Observe whether the excluded item appears"
+      ],
+      "expected_result": "The excluded content item does not appear anywhere in the user's recommendations or content listing."
+    },
+    {
+      "test_id": "T_FR7_2",
+      "requirement_id": "FR7",
+      "scenario": "Excluded Content Is Not Auto-Selected",
+      "steps": [
+        "Exclude a specific content item",
+        "Allow the system to auto-select content for the user",
+        "Observe whether the excluded item is selected"
+      ],
+      "expected_result": "The excluded content item is not auto-selected by the system."
+    },
+    {
+      "test_id": "T_FR8_1",
+      "requirement_id": "FR8",
+      "scenario": "Pricing Visible Before Account Creation Prompt",
+      "steps": [
+        "Open the app as a new user for the first time",
+        "Proceed through the onboarding flow",
+        "Observe whether subscription pricing is shown before the account creation prompt appears"
+      ],
+      "expected_result": "The subscription price, billing frequency, and included features are visible to the user before the account creation prompt is presented."
+    },
+    {
+      "test_id": "T_FR8_2",
+      "requirement_id": "FR8",
+      "scenario": "Pricing Visible Before Payment Details Are Requested",
+      "steps": [
+        "Open the app as a new user for the first time",
+        "Proceed through the onboarding flow",
+        "Observe whether subscription pricing is shown before payment details are requested"
+      ],
+      "expected_result": "The subscription price, billing frequency, and included features are visible to the user before any payment details are requested."
+    },
+    {
+      "test_id": "T_FR9_1",
+      "requirement_id": "FR9",
+      "scenario": "Free Meditation Session Plays Without Subscription Prompt",
+      "steps": [
+        "Open the app without an active subscription",
+        "Select a designated free meditation session",
+        "Observe whether a subscription prompt appears during playback"
+      ],
+      "expected_result": "The meditation session plays in full without a subscription prompt appearing at any point."
+    },
+    {
+      "test_id": "T_FR9_2",
+      "requirement_id": "FR9",
+      "scenario": "Free Sleep Story and Soundscape Play Without Subscription Prompt",
+      "steps": [
+        "Open the app without an active subscription",
+        "Select a designated free sleep story and play it to completion",
+        "Select a designated free soundscape and play it",
+        "Observe whether a subscription prompt appears during either"
+      ],
+      "expected_result": "Both the sleep story and soundscape play in full without a subscription prompt appearing."
+    },
+    {
+      "test_id": "T_FR10_1",
+      "requirement_id": "FR10",
+      "scenario": "Acute Anxiety Relief Session Plays Without Subscription",
+      "steps": [
+        "Open the app without an active subscription",
+        "Navigate to and select an acute anxiety relief session",
+        "Observe whether a subscription prompt appears"
+      ],
+      "expected_result": "The acute anxiety relief session plays in full without a subscription prompt appearing."
+    },
+    {
+      "test_id": "T_FR10_2",
+      "requirement_id": "FR10",
+      "scenario": "Acute Anxiety Relief Session Remains Free After Subscription Lapses",
+      "steps": [
+        "Let an active subscription lapse or cancel it",
+        "Navigate to and select an acute anxiety relief session",
+        "Observe whether a subscription prompt appears"
+      ],
+      "expected_result": "The acute anxiety relief session plays in full without a subscription prompt appearing, even after the subscription has lapsed."
+    },
+    {
+      "test_id": "T_FR11_1",
+      "requirement_id": "FR11",
+      "scenario": "User Cancels Subscription Without Contacting Support",
+      "steps": [
+        "Open the app with an active subscription",
+        "Initiate the cancellation process",
+        "Complete the cancellation without contacting customer support",
+        "Observe whether the subscription is cancelled and confirmation is received"
+      ],
+      "expected_result": "The subscription is fully cancelled and the user receives confirmation that no further charges will be applied, without having needed to contact customer support."
+    },
+    {
+      "test_id": "T_FR11_2",
+      "requirement_id": "FR11",
+      "scenario": "No Further Charges Applied After Cancellation",
+      "steps": [
+        "Cancel an active subscription",
+        "Wait for the next scheduled billing date to pass",
+        "Check whether any charge was applied"
+      ],
+      "expected_result": "No charge is applied on or after the cancellation confirmation date."
+    },
+    {
+      "test_id": "T_FR12_1",
+      "requirement_id": "FR12",
+      "scenario": "Trial-to-Paid Notification Sent One Week Before Conversion",
+      "steps": [
+        "Begin a free trial",
+        "Advance time to one week before the trial conversion date",
+        "Observe whether a notification is received"
+      ],
+      "expected_result": "The user receives a notification informing them of the upcoming paid conversion one week before it occurs."
+    },
+    {
+      "test_id": "T_FR12_2",
+      "requirement_id": "FR12",
+      "scenario": "Trial-to-Paid Notification Sent 48 Hours Before Conversion",
+      "steps": [
+        "Begin a free trial",
+        "Advance time to 48 hours before the trial conversion date",
+        "Observe whether a notification is received"
+      ],
+      "expected_result": "The user receives a notification informing them of the upcoming paid conversion 48 hours before it occurs."
+    },
+    {
+      "test_id": "T_FR12_3",
+      "requirement_id": "FR12",
+      "scenario": "Trial-to-Paid Notification Sent 4 Hours Before Conversion",
+      "steps": [
+        "Begin a free trial",
+        "Advance time to 4 hours before the trial conversion date",
+        "Observe whether a notification is received"
+      ],
+      "expected_result": "The user receives a notification informing them of the upcoming paid conversion 4 hours before it occurs."
+    },
+    {
+      "test_id": "T_FR13_1",
+      "requirement_id": "FR13",
+      "scenario": "Billing Details Display Subscription Tier and Next Billing Date",
+      "steps": [
+        "Open the app with an active subscription",
+        "Navigate to the billing details",
+        "Observe what information is displayed"
+      ],
+      "expected_result": "The current subscription tier and next billing date are both displayed."
+    },
+    {
+      "test_id": "T_FR13_2",
+      "requirement_id": "FR13",
+      "scenario": "Billing Details Display Next Charge Amount",
+      "steps": [
+        "Open the app with an active subscription",
+        "Navigate to the billing details",
+        "Observe whether the next charge amount is displayed"
+      ],
+      "expected_result": "The next billing amount is displayed alongside the subscription tier and next billing date."
+    },
+    {
+      "test_id": "T_NFR1_1",
+      "requirement_id": "NFR1",
+      "scenario": "Refund Request Acknowledged Within 48 Hours",
+      "steps": [
+        "Submit a refund request",
+        "Record the submission timestamp",
+        "Wait 48 hours",
+        "Check whether an acknowledgement has been received"
+      ],
+      "expected_result": "An acknowledgement has been received within 48 hours of the refund request submission."
+    },
+    {
+      "test_id": "T_NFR1_2",
+      "requirement_id": "NFR1",
+      "scenario": "Refund Acknowledgement Contains Reference Number and Resolution Timeframe",
+      "steps": [
+        "Submit a refund request",
+        "Wait for the acknowledgement to arrive",
+        "Inspect the contents of the acknowledgement"
+      ],
+      "expected_result": "The acknowledgement contains a reference number and a stated expected resolution timeframe."
+    },
+    {
+      "test_id": "T_NFR2_1",
+      "requirement_id": "NFR2",
+      "scenario": "App Recovers and Offers Resume After Crash During Session",
+      "steps": [
+        "Start an audio session",
+        "Force close or crash the app mid-session",
+        "Reopen the app",
+        "Observe whether the app launches without error and offers a resume option"
+      ],
+      "expected_result": "The app launches without error and presents the user with the option to resume the session from the point at which it was interrupted."
+    },
+    {
+      "test_id": "T_NFR2_2",
+      "requirement_id": "NFR2",
+      "scenario": "App Recovers and Offers Resume After Unexpected Closure",
+      "steps": [
+        "Start an audio session",
+        "Unexpectedly close the app via the device task manager",
+        "Reopen the app",
+        "Observe whether the app launches without error and offers a resume option"
+      ],
+      "expected_result": "The app launches without error and presents the user with the option to resume the session from the point at which it was interrupted."
+    },
+    {
+      "test_id": "T_NFR3_1",
+      "requirement_id": "NFR3",
+      "scenario": "Navigation Path to Major Category Is Consistent Across Sessions",
+      "steps": [
+        "From the app's starting point, navigate to the sleep stories category and note the path taken",
+        "Return to the app's starting point",
+        "Navigate to the sleep stories category again",
+        "Compare the two navigation paths"
+      ],
+      "expected_result": "The same navigation path leads to the sleep stories category on both occasions."
+    },
+    {
+      "test_id": "T_NFR3_2",
+      "requirement_id": "NFR3",
+      "scenario": "Navigation to Major Category Does Not Require Passing Through Unrelated Screens",
+      "steps": [
+        "From the app's starting point, navigate to each major content category",
+        "Record every screen passed through on the way to each category",
+        "Inspect the recorded paths for unrelated screens"
+      ],
+      "expected_result": "No navigation path to a major content category requires the user to pass through screens unrelated to that category."
     }
   ]
 }

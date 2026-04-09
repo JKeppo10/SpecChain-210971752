@@ -2,11 +2,136 @@
   "groups": [
     {
       "group_id": "G1",
-      "theme": "App crashes during activity logging, THIS IS A AN EXAMPLE, PLEASE REMOVE ",
-      "review_ids": ["rev_12", "rev_33", "rev_45", "rev_89"],
+      "theme": "Using the Calm App succesfully to allow them to fall asleep and/or manage their stress more easily",
+      "review_ids": [        
+        "R00005",
+        "R00029",
+        "R00032",
+        "R00035",
+        "R00052",
+        "R00061",
+        "R00075",
+        "R00078",
+        "R00088",
+        "R00118",
+        "R00010",
+        "R00013",
+        "R00017",
+        "R00031",
+        "R00041",
+        "R00063",
+        "R00066",
+        "R00071",
+        "R00073",
+        "R00077",
+        "R00080",
+        "R00083",
+        "R00090"],
       "example_reviews": [
-        "The app crashes every time I log my run.",
-        "Logging workouts causes the app to freeze."
+        "been using for 2yrs now with annual subscription. I've never had any issues with the app having ads or anything like that. I use it to go to sleep every night. so i pick a story to listen to and I'm usually asleep before the story ends. it helps shut my brain off so I can go to sleep and that to me is worth the cost.",
+        "The story seller's voice was wonderful. it took a while, but did put me to sleep",
+        "awesome fell right to sleep",
+        "This app works well for sleep and square breathing.",
+        "A total game-changer for my mental health. The Sleep Stories help me drift off in minutes, and the daily meditations are the perfect way to start my morning. It's beautifully designed and very soothing."
+      ]
+    },
+    {
+      "group_id": "G2",
+      "theme": "Use the app , but find consistent issues that they would like fixed.",
+      "review_ids": [       
+        "R00002",
+        "R00011",
+        "R00018",
+        "R00021",
+        "R00040",
+        "R00058",
+        "R00125",
+        "R00018",
+        "R00111",
+        "R00020",
+        "R00086",
+        "R00099",
+        "R00122"],
+      "example_reviews": [
+        "Just Breath, I absolutely hate this. Each time I minimise the app and go back in there it is. Really Annoying for an app meant to calm you down. Overall havnt found any tracks that work.",
+        "I particularly love the sleep stories, however, as I listen to one every night I find I have to almost always play one I've heard many times before. I would love it if you were to present us with new stories more frequently. I'm becoming very bored with all the mindfulness and meditation stuff that there is so much of.",
+        "I like the meditations a lot. However, I'm noticing that the background nature sounds (rain and birds) are quite loud and drown out the speaker's voice.",
+        "not enough material for sleep stories",
+        "very frustrating when, after listening to a story at 1 am to get to sleep, the app chimes me at 2 to see if the story helped me get some sleep!!"
+      ]
+    },
+    {
+      "group_id": "G3",
+      "theme": "Think the Calm App is too costly or does not provide enough value or not enough is available at the free-tier",
+      "review_ids": [        
+        "R00012",
+        "R00016",
+        "R00027",
+        "R00036",
+        "R00046",
+        "R00049",
+        "R00062",
+        "R00102",
+        "R00106",
+        "R00113",
+        "R00124",
+        "R00050",
+        "R00109"],
+      "example_reviews": [
+        "hiding an emergency anxiety meditation behind a pay wall is just greed. it's like having an ad before showing a video of how to perform CPR.",
+        "pay wall/ ad wasteland for basically everything, terrible app",
+        "Only tried the free version for a day. Everything I clicked on was behind the paywall, with no way of sorting/finding free content? This was confusing and frustrating. Not calming.",
+        "This app is hyped in commercials, but it's never mentioned that there's a cost associated with it.",
+        "why not be upfront on the price? and be reasonable"
+      ]
+    },
+    {
+      "group_id": "G4",
+      "theme": "They have been charged more/unexpectedly, refund problems, still charged after cancelling, feel customer support is bad",
+      "review_ids": [        
+        "R00019",
+        "R00024",
+        "R00030",
+        "R00034",
+        "R00044",
+        "R00053",
+        "R00056",
+        "R00064",
+        "R00072",
+        "R00079",
+        "R00092",
+        "R00095",
+        "R00097",
+        "R00105"],
+      "example_reviews": [
+        "nightmare to get a refund from!",
+        "I have found the app useful but poor tech support around trying to upgrade to a family subscription has meant that they cancelled my subscription and failed to solve the issue so I have been without it for several weeks involuntarily. the new rate offered for an individual subscription is higher than the one they cancelled on me. alot of my time has been wasted exchanging emails which give me instructions all leading to the higher subscription option and it's deeply frustrating.",
+        "stop cheering, chargering me for everything . why did th music one take up forit , for you all .",
+        "They charged me after I requested that it be canceled.",
+        "Useless app for huge charges. Useless play lists. Better use free YouTube videos"
+      ]
+    },
+    {
+      "group_id": "G5",
+      "theme": "Have experienced bugs, crashes, poor UI design, etc. with the Calm App",
+      "review_ids": [     
+        "R00001",
+        "R00015",
+        "R00081",
+        "R00089",
+        "R00084",
+        "R00087",
+        "R00123",
+        "R00048",
+        "R00069",
+        "R00101"],
+      "example_reviews": [
+        "I had rated the app 4 stars in July 2021 and loved it but now (March 2024) it doesn't play more than 1 sleep track at a time so the timer feature no longer works. It's been like this for a few weeks now and writing here as no fix seems to be forthcoming. The \"streak\" recording isn't saving either but that's not a major but the timer fault is a major issue. Fix urgently please. 1 update later: not fixed. Did get fixed but now in April 2026 timer isnt working again! (+ limited new content)",
+        "I've used this app for years to help me sleep. recently, regardless of what it says in the settings, the app auto plays whatever is next until you stop it manually. this is RIDICULOUS because what's next in the queue might be something loud and stimulating..... and the subsequent music ALWAYS wakes me up. fix this PLEASE! right now the app is actually a detriment to sleep!",
+        "App is slow to load and play favorites. Please you help ensure that all favorites are downloaded.",
+        "My mother bought a family membership that I clicked on and then when I downloaded the app and clicked on the link it did not work for me. It just sent me back to the Google app store where I could open the app up but it did not show anywhere on the app that I was on the family plan.",
+        "Awesome app with fantastic content. I cannot for the life of me figure out why they thought this was the kind of navigation makes sense. but when I do find what I'm looking for, it's amazing"
       ]
     }
-  ]}
+  ]
+}

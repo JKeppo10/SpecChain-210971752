@@ -1,22 +1,162 @@
 {  "personas": [
     {
       "id": "P1",
-      "name": "Frequent Activity Tracker",
-      "description": "A user who relies on the app to log workouts frequently and expects stable performance.",
+      "name": "Successful Sleepers/Stress Relievers",
+      "description": "Using the Calm App succesfully to allow them to fall asleep and/or manage their stress more easily",
       "derived_from_group": "G1",
       "goals": [
-        "Track workouts consistently",
-        "Log activity quickly"      ],
+        "Use guided meditation to manage daily stress and anxiety",
+        "Fall asleep faster using sleep stories and soundscapes",
+        "Maintain a consistent mindfulness and relaxation routine"
+      ],
       "pain_points": [
-        "App crashes during logging",
-        "Workout data sometimes disappears"      ],
+        "Background nature sounds occasionally drown out the narrator's voice",
+        "Breathing exercise sessions are interrupted when the app is minimised"
+      ],
       "context": [
-        "Logging activities immediately after workouts",
-        "Using the app during outdoor exercise"      ],
+        "Using the app at bedtime to wind down",
+        "Using the app during stressful moments at work or throughout the day"
+      ],
       "constraints": [
-        "Logging must be reliable",
-        "Data should not be lost"       ],
+        "Sessions must play uninterrupted from start to finish",
+        "Audio balance between narrator and background sounds must be consistent"
+      ],
       "evidence_reviews": [
-        "rev_12",
-        "rev_45"      ]
-    }  ] }
+        "R00005",
+        "R00032",
+        "R00052",
+        "R00061",
+        "R00075",
+        "R00078"
+      ]
+    },
+        {
+      "id": "P2",
+      "name": "Critic",
+      "description": "Users who values the app but is increasingly frustrated by repetitive content, limited library growth, and difficulty finding specific tracks or soundscapes.",
+      "derived_from_group": "G2",
+      "goals": [
+        "Discover new sleep stories and soundscapes regularly",
+        "Easily find specific content types such as thunderstorm or ocean soundscapes",
+        "Have enough content variety to avoid repetition over long-term use"
+      ],
+      "pain_points": [
+        "The same sleep stories repeat too often with little new content added",
+        "The content library is difficult to browse and search through",
+        "Audio quality issues such as overly loud background sounds reduce enjoyment"
+      ],
+      "context": [
+        "Using the app nightly and exhausting available sleep stories over time",
+        "Searching for specific soundscapes while in a stressed or distressed state"
+      ],
+      "constraints": [
+        "New content must be added frequently enough to prevent repetition",
+        "Content must be easily searchable and well organised"
+      ],
+      "evidence_reviews": [
+        "R00011",
+        "R00018",
+        "R00021",
+        "R00040",
+        "R00058",
+        "R00111"
+      ]
+    },
+        {
+      "id": "P3",
+      "name": "Value-Conscious Trialist",
+      "description": "A new or prospective user who downloaded Calm expecting meaningful free access but felt misled by how aggressively content is locked behind a paywall, leading to frustration and distrust of the app.",
+      "derived_from_group": "G3",
+      "goals": [
+        "Explore the app's features before committing to a subscription",
+        "Access at least basic meditation or anxiety relief tools for free",
+        "Understand the full cost of the app before being prompted to subscribe"
+      ],
+      "pain_points": [
+        "Almost all content is locked behind a paywall with little free access",
+        "The app does not clearly communicate its pricing upfront",
+        "Emergency or anxiety-focused content being paywalled feels exploitative"
+      ],
+      "context": [
+        "Trying the app for the first time after seeing an advertisement",
+        "Looking for free mental health tools and encountering unexpected paywalls"
+      ],
+      "constraints": [
+        "Pricing and subscription requirements must be transparent before sign-up",
+        "A meaningful free tier must exist for users to evaluate the app"
+      ],
+      "evidence_reviews": [
+        "R00012",
+        "R00016",
+        "R00027",
+        "R00036",
+        "R00102",
+        "R00113"
+      ]
+    },
+        {
+      "id": "P4",
+      "name": "Billing Problem User",
+      "description": "A user who encountered serious billing issues such as being charged after cancelling, difficulty obtaining refunds, or unexpected subscription renewals, resulting in distrust and frustration with Calm's support.",
+      "derived_from_group": "G4",
+      "goals": [
+        "Cancel a subscription and stop being charged immediately",
+        "Receive a timely refund for unauthorised or unwanted charges",
+        "Get responsive and helpful support when billing issues arise"
+      ],
+      "pain_points": [
+        "Continued to be charged after cancelling a subscription",
+        "Refund requests go unanswered for weeks or are outright refused",
+        "Customer support is unresponsive or unhelpful when resolving billing disputes"
+      ],
+      "context": [
+        "Attempting to cancel a free trial before it converts to a paid subscription",
+        "Noticing unexpected charges on a bank statement and contacting support"
+      ],
+      "constraints": [
+        "Cancellation must take effect immediately and stop all future charges",
+        "Refund requests must be acknowledged and resolved within a reasonable timeframe"
+      ],
+      "evidence_reviews": [
+        "R00019",
+        "R00056",
+        "R00064",
+        "R00079",
+        "R00110",
+        "R00130"
+      ]
+    },
+        {
+      "id": "P5",
+      "name": "App Issues User",
+      "description": "A user who wants to use Calm, but is consistently blocked or frustrated by technical problems including bugs, broken features, confusing navigation, and poor app performance.",
+      "derived_from_group": "G5",
+      "goals": [
+        "Navigate the app intuitively to find desired content quickly",
+        "Use features such as timers, sleep tracking, and audio playback reliably",
+        "Experience stable performance without crashes or unexpected behaviour"
+      ],
+      "pain_points": [
+        "The app crashes or fails to load content on certain devices",
+        "Navigation is confusing and makes it hard to find specific features",
+        "Notifications interrupt active sessions and cannot be easily disabled"
+      ],
+      "context": [
+        "Using the app on Android devices where certain features behave unexpectedly",
+        "Trying to access a feature mid-session and encountering errors or crashes"
+      ],
+      "constraints": [
+        "Core features must work reliably across supported Android devices",
+        "Navigation must be intuitive enough to use while in a stressed or distressed state"
+      ],
+      "evidence_reviews": [
+        "R00001",
+        "R00015",
+        "R00048",
+        "R00081",
+        "R00087",
+        "R00101"
+      ]
+    }
+  ] 
+}

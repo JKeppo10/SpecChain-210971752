@@ -3,14 +3,373 @@
     {
       "test_id": "T_hybrid_1",
       "requirement_id": "FR_hybrid_1",
-      "scenario": "Save a workout entry without crashing",
+      "scenario": "Validates that sessions of 5 minutes or less are available when filtering by duration.",
       "steps": [
-        "Open the workout logging feature",
-        "Enter workout information",
-        "Submit the workout"
+        "Step 1: Launch the Calm app and navigate to the content library.",
+        "Step 2: Apply a filter for sessions with a duration of 5 minutes or less.",
+        "Step 3: Verify that at least one session is displayed matching that duration."
       ],
-      "expected_result": "The workout is saved successfully and the application does not crash.",
-      "notes": "Revised the expected result to match the updated hybrid requirement."
+      "expected_result": "At least one session of 5 minutes or less is displayed in the filtered results.",
+      "notes": "Carried over from T_auto_1."
+    },
+    {
+      "test_id": "T_hybrid_2",
+      "requirement_id": "FR_hybrid_1",
+      "scenario": "Validates that sessions are displayed across multiple duration ranges when filtering.",
+      "steps": [
+        "Step 1: Launch the Calm app and navigate to the content library.",
+        "Step 2: Apply filters for short (5 min), medium (20 min), and long (45 min) durations separately.",
+        "Step 3: Verify that sessions are returned for each duration range."
+      ],
+      "expected_result": "The system returns at least one session for each of the three duration ranges tested.",
+      "notes": "Carried over from T_auto_2. Duration values adjusted to align with the revised FR_hybrid_1 which no longer specifies a fixed 5–60 minute range."
+    },
+    {
+      "test_id": "T_hybrid_3",
+      "requirement_id": "FR_hybrid_2",
+      "scenario": "Validates that an active audio session is not interrupted by an in-system notification.",
+      "steps": [
+        "Step 1: Launch the Calm app and start playing an audio session.",
+        "Step 2: Trigger an in-app notification or prompt while the session is playing.",
+        "Step 3: Observe whether the audio session continues without interruption."
+      ],
+      "expected_result": "The audio session continues playing without pausing, skipping, or terminating when an in-system notification is triggered.",
+      "notes": "Replaced T_auto_3 which tested a daily reminder notification feature (FR_auto_2) that was removed from the hybrid spec. FR_hybrid_2 was rewritten to focus on in-system interruptions only, so this test now validates that in-system notifications do not interrupt active sessions."
+    },
+    {
+      "test_id": "T_hybrid_4",
+      "requirement_id": "FR_hybrid_2",
+      "scenario": "Validates that an active audio session is not interrupted by an in-system check-in prompt.",
+      "steps": [
+        "Step 1: Launch the Calm app and start playing a sleep story.",
+        "Step 2: Wait for or simulate an in-app check-in prompt such as a mood or sleep quality prompt.",
+        "Step 3: Observe whether the audio continues playing while the prompt is shown."
+      ],
+      "expected_result": "The audio session continues playing uninterrupted while the in-system prompt is displayed.",
+      "notes": "Replaced T_auto_4 which tested that a daily reminder setting was saved across sessions (FR_auto_2). That requirement was removed in the hybrid spec. This test instead validates a second in-system interruption scenario — check-in prompts — which are directly referenced in G1 hybrid reviews."
+    },
+    {
+      "test_id": "T_hybrid_5",
+      "requirement_id": "FR_hybrid_3",
+      "scenario": "Validates that a user can cancel their subscription from within the system without being redirected externally.",
+      "steps": [
+        "Step 1: Launch the Calm app and log in with an account that has an active subscription.",
+        "Step 2: Navigate to subscription settings within the app.",
+        "Step 3: Select the option to cancel the subscription.",
+        "Step 4: Complete the cancellation flow and verify an in-app confirmation is shown."
+      ],
+      "expected_result": "The subscription is cancelled and the user receives an in-system confirmation that no further charges will be applied, without being redirected to an external platform.",
+      "notes": "Replaced T_auto_7 which tested free content accessibility without a subscription (FR_auto_3). FR_auto_3 was replaced in the hybrid spec with FR_hybrid_3 which focuses on in-system cancellation. This test validates the core cancellation flow grounded in G2 hybrid reviews."
+    },
+    {
+      "test_id": "T_hybrid_6",
+      "requirement_id": "FR_hybrid_3",
+      "scenario": "Validates that cancellation confirmation persists after the user closes and reopens the system.",
+      "steps": [
+        "Step 1: Cancel a subscription following the in-app cancellation flow.",
+        "Step 2: Close the app completely.",
+        "Step 3: Reopen the app and navigate to subscription settings.",
+        "Step 4: Verify the subscription status shows as cancelled."
+      ],
+      "expected_result": "The subscription status is shown as cancelled after the system is closed and reopened.",
+      "notes": "Replaced T_auto_8 which tested content limitations on a free plan (FR_auto_3). Replaced entirely to match FR_hybrid_3. Tests persistence of the cancellation state across sessions."
+    },
+    {
+      "test_id": "T_hybrid_7",
+      "requirement_id": "FR_hybrid_4",
+      "scenario": "Validates that subscription price and billing terms are shown before payment details are requested.",
+      "steps": [
+        "Step 1: Launch the Calm app as a new user and begin the sign-up flow.",
+        "Step 2: Proceed through the flow until the payment details screen is reached.",
+        "Step 3: Verify that the subscription price, billing frequency, and trial end date were displayed on a screen prior to the payment screen."
+      ],
+      "expected_result": "The subscription price, billing frequency, and trial end date are visible before the user is asked to enter payment details.",
+      "notes": "Replaced T_auto_9 which tested that new users are offered a 7-day free trial (FR_auto_4). FR_auto_4 was replaced with FR_hybrid_4 which focuses on billing transparency before any charge is applied. Grounded in G2 reviews describing unexpected charges."
+    },
+    {
+      "test_id": "T_hybrid_8",
+      "requirement_id": "FR_hybrid_4",
+      "scenario": "Validates that billing terms are not hidden behind a scroll or secondary link on the pricing screen.",
+      "steps": [
+        "Step 1: Launch the Calm app as a new user and navigate to the pricing or subscription screen.",
+        "Step 2: Without scrolling or tapping any secondary links, observe what pricing information is immediately visible.",
+        "Step 3: Verify that the price, billing frequency, and trial terms are all visible without additional interaction."
+      ],
+      "expected_result": "Subscription price, billing frequency, and trial terms are all visible on the pricing screen without requiring the user to scroll or tap a secondary link.",
+      "notes": "Replaced T_auto_10 which tested that existing users are not re-offered a free trial (FR_auto_4). Replaced entirely to match FR_hybrid_4. This test addresses a specific G2 pain point where pricing terms were buried or hidden."
+    },
+    {
+      "test_id": "T_hybrid_9",
+      "requirement_id": "FR_hybrid_5",
+      "scenario": "Validates that the search bar is accessible from any screen and returns results.",
+      "steps": [
+        "Step 1: Launch the Calm app and navigate to a non-home screen such as the Sleep section.",
+        "Step 2: Tap the search icon and enter a keyword such as 'rain'.",
+        "Step 3: Verify that relevant content results are displayed within 2 seconds."
+      ],
+      "expected_result": "Relevant content results matching the keyword are displayed within 2 seconds from any screen.",
+      "notes": "Carried over from T_auto_13. Updated requirement_id from FR_auto_5 to FR_hybrid_5. Step 1 expanded to test search accessibility from a non-home screen, which better validates the 'any screen' condition added to FR_hybrid_5."
+    },
+    {
+      "test_id": "T_hybrid_10",
+      "requirement_id": "FR_hybrid_5",
+      "scenario": "Validates that search returns results for narrator name as a keyword.",
+      "steps": [
+        "Step 1: Launch the Calm app and open the search bar.",
+        "Step 2: Enter the name of a known narrator.",
+        "Step 3: Verify that content narrated by that person is returned in the results."
+      ],
+      "expected_result": "Content narrated by the searched narrator is displayed in the search results.",
+      "notes": "Replaced T_auto_14 which tested generic keyword search. Updated to test narrator name search specifically, since FR_hybrid_5 explicitly lists narrator name as a supported keyword type — a detail not present in FR_auto_5."
+    },
+    {
+      "test_id": "T_hybrid_11",
+      "requirement_id": "FR_hybrid_6",
+      "scenario": "Validates that selecting a content category filter shows only matching content.",
+      "steps": [
+        "Step 1: Launch the Calm app and navigate to the content library.",
+        "Step 2: Select the Sleep Stories category filter.",
+        "Step 3: Verify that only sleep story content is displayed and other content types are hidden."
+      ],
+      "expected_result": "Only sleep story content is displayed after the Sleep Stories filter is applied.",
+      "notes": "Replaced T_auto_15 which tested that the navigation menu appears when its icon is tapped (FR_auto_6). FR_auto_6 was replaced with FR_hybrid_6 which focuses on content category filtering. Entirely new test grounded in G3 reviews describing difficulty finding specific content types."
+    },
+    {
+      "test_id": "T_hybrid_12",
+      "requirement_id": "FR_hybrid_6",
+      "scenario": "Validates that all three required content category filters are available.",
+      "steps": [
+        "Step 1: Launch the Calm app and navigate to the content library.",
+        "Step 2: Check the available filter or category options.",
+        "Step 3: Verify that filters for Sleep Stories, Soundscapes, and Meditations are all present."
+      ],
+      "expected_result": "Filters for Sleep Stories, Soundscapes, and Meditations are all available in the content library.",
+      "notes": "Replaced T_auto_16 which tested that the navigation menu does not appear when not tapped (FR_auto_6). Replaced entirely to match FR_hybrid_6. This test validates the minimum set of category filters specified in the hybrid requirement."
+    },
+    {
+      "test_id": "T_hybrid_13",
+      "requirement_id": "FR_hybrid_7",
+      "scenario": "Validates that account recovery options are shown after three consecutive login failures.",
+      "steps": [
+        "Step 1: Launch the Calm app and enter an incorrect password three times consecutively.",
+        "Step 2: Attempt a fourth login with an incorrect password.",
+        "Step 3: Verify that account recovery options such as password reset or email verification are displayed on the login screen."
+      ],
+      "expected_result": "Account recovery options are displayed on the login screen after three consecutive failed login attempts.",
+      "notes": "Carried over from T_auto_19 but significantly rewritten. T_auto_19 tested the happy path (valid login succeeds). FR_hybrid_7 was rewritten to focus on repeated login failure recovery, so this test now validates the failure path with a specific threshold of three attempts."
+    },
+    {
+      "test_id": "T_hybrid_14",
+      "requirement_id": "FR_hybrid_7",
+      "scenario": "Validates that the password reset flow is completable without contacting support.",
+      "steps": [
+        "Step 1: Trigger the account recovery flow from the login screen.",
+        "Step 2: Select the password reset option.",
+        "Step 3: Complete the reset flow using only in-app and email steps.",
+        "Step 4: Verify the user can log in successfully with the new password."
+      ],
+      "expected_result": "The user successfully resets their password and logs in without requiring contact with customer support.",
+      "notes": "Replaced T_auto_20 which tested login with empty credentials. While valid, that test does not address FR_hybrid_7's core requirement of providing recovery without contacting support. This test validates the full recovery flow end-to-end."
+    },
+    {
+      "test_id": "T_hybrid_15",
+      "requirement_id": "FR_hybrid_8",
+      "scenario": "Validates that the app offers a session resume option after reopening following a crash.",
+      "steps": [
+        "Step 1: Launch the Calm app and start playing an audio session.",
+        "Step 2: Force close the app while the session is playing.",
+        "Step 3: Reopen the app and observe the launch screen.",
+        "Step 4: Verify that the app launches without error and presents an option to resume the interrupted session."
+      ],
+      "expected_result": "The app launches without error and displays an option to resume the session from the point of interruption.",
+      "notes": "Replaced T_auto_21 which tested help menu accessibility (FR_auto_8). FR_auto_8 was replaced with FR_hybrid_8 which focuses on crash session recovery. Entirely new test grounded in G4 reviews describing crashes during active sessions with no recovery path."
+    },
+    {
+      "test_id": "T_hybrid_16",
+      "requirement_id": "FR_hybrid_8",
+      "scenario": "Validates that resuming a session restarts from the correct position.",
+      "steps": [
+        "Step 1: Start an audio session and allow it to play for at least 2 minutes.",
+        "Step 2: Force close the app.",
+        "Step 3: Reopen the app and select the option to resume the session.",
+        "Step 4: Verify the session resumes from approximately the position at which it was interrupted."
+      ],
+      "expected_result": "The session resumes from approximately the point of interruption rather than from the beginning.",
+      "notes": "Replaced T_auto_22 which tested step-by-step troubleshooting instructions (FR_auto_8). Replaced entirely to match FR_hybrid_8. This test validates the accuracy of the resume position, not just that the option is offered."
+    },
+    {
+      "test_id": "T_hybrid_17",
+      "requirement_id": "FR_hybrid_9",
+      "scenario": "Validates that a free vs paid breakdown is shown when a paywalled item is encountered.",
+      "steps": [
+        "Step 1: Launch the Calm app without an active subscription.",
+        "Step 2: Select a content item that requires a subscription.",
+        "Step 3: Observe the subscription prompt that appears.",
+        "Step 4: Verify the prompt includes a breakdown of free versus paid content."
+      ],
+      "expected_result": "The subscription prompt displays a visible breakdown of what is available for free versus what requires a subscription.",
+      "notes": "Carried over from T_auto_25. Updated requirement_id from FR_auto_9 to FR_hybrid_9. Steps refined to verify the free vs paid breakdown specifically, since FR_hybrid_9 is more specific than FR_auto_9 about what must be shown."
+    },
+    {
+      "test_id": "T_hybrid_18",
+      "requirement_id": "FR_hybrid_9",
+      "scenario": "Validates that the free vs paid breakdown is visible without additional interaction.",
+      "steps": [
+        "Step 1: Launch the Calm app without an active subscription.",
+        "Step 2: Tap on a paywalled content item to trigger the subscription prompt.",
+        "Step 3: Without scrolling or tapping any links, check whether the free vs paid breakdown is immediately visible."
+      ],
+      "expected_result": "The free vs paid content breakdown is immediately visible on the subscription prompt without requiring the user to scroll or tap a secondary link.",
+      "notes": "Carried over from T_auto_26. Updated requirement_id from FR_auto_9 to FR_hybrid_9. Step 3 made more specific — the original test only checked visual prominence, whereas FR_hybrid_9 requires the breakdown to be accessible without additional interaction."
+    },
+    {
+      "test_id": "T_hybrid_19",
+      "requirement_id": "FR_hybrid_10",
+      "scenario": "Validates that a non-subscribed user can play a complete free sleep story without interruption.",
+      "steps": [
+        "Step 1: Launch the Calm app without an active subscription.",
+        "Step 2: Navigate to the free content section and select a designated free sleep story.",
+        "Step 3: Play the sleep story to completion and verify no subscription prompt appears."
+      ],
+      "expected_result": "The sleep story plays in full without a subscription prompt appearing.",
+      "notes": "Replaced T_auto_27 which tested personalized content recommendations (FR_auto_10). FR_auto_10 was replaced with FR_hybrid_10 which requires free access to at least one of each content type. Entirely new test grounded in G5 reviews describing inability to try content before paying."
+    },
+    {
+      "test_id": "T_hybrid_20",
+      "requirement_id": "FR_hybrid_10",
+      "scenario": "Validates that all three required free content types are accessible without a subscription.",
+      "steps": [
+        "Step 1: Launch the Calm app without an active subscription.",
+        "Step 2: Locate and play a designated free sleep story, a designated free soundscape, and a designated free meditation session.",
+        "Step 3: Verify each plays in full without a subscription prompt."
+      ],
+      "expected_result": "All three content types — sleep story, soundscape, and meditation — play in full without a subscription prompt for a non-subscribed user.",
+      "notes": "Replaced T_auto_28 which tested that recommendations change based on updated user goals (FR_auto_10). Replaced entirely to match FR_hybrid_10. This test validates all three content types required by the hybrid requirement in a single scenario."
+    },
+    {
+      "test_id": "T_hybrid_21",
+      "requirement_id": "NFR_hybrid_1",
+      "scenario": "Validates that audio playback begins within 3 seconds on a standard network connection.",
+      "steps": [
+        "Step 1: Launch the Calm app and navigate to a content item.",
+        "Step 2: Tap the play button and start a timer simultaneously.",
+        "Step 3: Stop the timer when audio playback begins.",
+        "Step 4: Verify the elapsed time is 3 seconds or less."
+      ],
+      "expected_result": "Audio playback begins within 3 seconds of the play button being tapped.",
+      "notes": "Carried over from T_auto_5. Updated requirement_id from NFR_auto_1 to NFR_hybrid_1. Load time threshold updated from 2 to 3 seconds to match the revised NFR_hybrid_1, which uses a more realistic threshold across device types."
+    },
+    {
+      "test_id": "T_hybrid_22",
+      "requirement_id": "NFR_hybrid_1",
+      "scenario": "Validates that playback load time is consistent across multiple content types.",
+      "steps": [
+        "Step 1: Launch the Calm app and measure the load time for a sleep story.",
+        "Step 2: Measure the load time for a soundscape.",
+        "Step 3: Measure the load time for a meditation session.",
+        "Step 4: Verify all three load within 3 seconds."
+      ],
+      "expected_result": "All three content types begin playing within 3 seconds of the play button being tapped.",
+      "notes": "Replaced T_auto_6 which tested load time on a 2G network connection — an unrealistic test condition that does not reflect supported usage. This test instead validates load time consistency across content types on a standard connection, which is a more grounded and reproducible scenario."
+    },
+    {
+      "test_id": "T_hybrid_23",
+      "requirement_id": "NFR_hybrid_2",
+      "scenario": "Validates that subscription cancellation is confirmed within the same session.",
+      "steps": [
+        "Step 1: Launch the Calm app and log in with an active subscription.",
+        "Step 2: Navigate to subscription settings and submit a cancellation request.",
+        "Step 3: Verify a cancellation confirmation screen is displayed within the same app session without restarting."
+      ],
+      "expected_result": "A cancellation confirmation screen is displayed within the same session in which the request was made.",
+      "notes": "Carried over from T_auto_11 but rewritten to match NFR_hybrid_2. T_auto_11 only verified that the user could view their plan details. NFR_hybrid_2 requires the full cancellation to be confirmed within the same session, which is a more specific and testable condition."
+    },
+    {
+      "test_id": "T_hybrid_24",
+      "requirement_id": "NFR_hybrid_2",
+      "scenario": "Validates that the cancellation flow does not require re-authentication.",
+      "steps": [
+        "Step 1: Log in to the Calm app and navigate to subscription settings.",
+        "Step 2: Initiate the cancellation flow.",
+        "Step 3: Verify the user is not prompted to enter their password or log in again during the cancellation flow."
+      ],
+      "expected_result": "The cancellation flow completes without requiring the user to re-authenticate.",
+      "notes": "Replaced T_auto_12 which tested that cancellation notified the user (NFR_auto_2). NFR_hybrid_2 adds the explicit condition that re-authentication must not be required, which T_auto_12 did not test. Grounded in G2 reviews describing cancellation flows that loop or restart unexpectedly."
+    },
+    {
+      "test_id": "T_hybrid_25",
+      "requirement_id": "NFR_hybrid_3",
+      "scenario": "Validates that in-app notifications are suppressed while an audio session is playing.",
+      "steps": [
+        "Step 1: Launch the Calm app and start playing an audio session.",
+        "Step 2: Trigger an in-app notification such as a daily reminder or mood check-in.",
+        "Step 3: Verify the notification is not delivered while the session is active."
+      ],
+      "expected_result": "The in-app notification is suppressed and not displayed while the audio session is actively playing.",
+      "notes": "Replaced T_auto_17 which tested that a new user could find and play content within 2 minutes (NFR_auto_3). NFR_auto_3 was replaced with NFR_hybrid_3 which focuses on notification suppression during sessions. Entirely new test grounded in G3 reviews describing notification interruptions."
+    },
+    {
+      "test_id": "T_hybrid_26",
+      "requirement_id": "NFR_hybrid_3",
+      "scenario": "Validates that suppressed notifications are delivered after the session ends.",
+      "steps": [
+        "Step 1: Start an audio session and trigger an in-app notification during playback.",
+        "Step 2: Allow the session to end naturally.",
+        "Step 3: Verify the suppressed notification is delivered after the session ends."
+      ],
+      "expected_result": "The suppressed in-app notification is delivered after the audio session ends.",
+      "notes": "Replaced T_auto_18 which tested user ease-of-use ratings (NFR_auto_3) — an untestable acceptance condition. This test validates the second condition of NFR_hybrid_3: that suppressed notifications are not lost but delivered once the session is over."
+    },
+    {
+      "test_id": "T_hybrid_27",
+      "requirement_id": "NFR_hybrid_4",
+      "scenario": "Validates that the app displays an error message and recovery option when a playback error occurs.",
+      "steps": [
+        "Step 1: Launch the Calm app and simulate a playback error by interrupting the network mid-session.",
+        "Step 2: Observe the app's response to the error.",
+        "Step 3: Verify the app displays a descriptive error message.",
+        "Step 4: Verify at least one recovery option such as retry or return to home is presented."
+      ],
+      "expected_result": "The app displays a descriptive error message and at least one actionable recovery option rather than freezing silently or closing without explanation.",
+      "notes": "Replaced T_auto_23 which tested navigation ease for users with limited technical expertise (NFR_auto_4). NFR_auto_4 was replaced with NFR_hybrid_4 which focuses on graceful error handling. The unsupported 'limited technical expertise' assumption was removed and the requirement rewritten around observable error handling behaviour."
+    },
+    {
+      "test_id": "T_hybrid_28",
+      "requirement_id": "NFR_hybrid_4",
+      "scenario": "Validates that the app does not become silently unresponsive during a login error.",
+      "steps": [
+        "Step 1: Launch the Calm app and attempt to log in while the device is in airplane mode.",
+        "Step 2: Observe the app's response after the login attempt fails.",
+        "Step 3: Verify the app displays an error message describing the problem.",
+        "Step 4: Verify at least one recovery option is shown such as retry or check connection."
+      ],
+      "expected_result": "The app displays a descriptive error message and a recovery option rather than becoming unresponsive or closing silently.",
+      "notes": "Replaced T_auto_24 which tested sleep story accessibility for users with limited technical expertise (NFR_auto_4). Replaced entirely to match NFR_hybrid_4. This test covers a different error scenario (login failure) from T_hybrid_27 (playback failure) to ensure error handling applies across multiple app states."
+    },
+    {
+      "test_id": "T_hybrid_29",
+      "requirement_id": "NFR_hybrid_5",
+      "scenario": "Validates that content begins playing within 4 seconds on a standard mobile data connection.",
+      "steps": [
+        "Step 1: Connect the device to a standard mobile data network.",
+        "Step 2: Launch the Calm app and select a content item to play.",
+        "Step 3: Measure the time from selection to the start of playback.",
+        "Step 4: Verify the elapsed time is 4 seconds or less."
+      ],
+      "expected_result": "Playback begins within 4 seconds of the content item being selected.",
+      "notes": "Carried over from T_auto_29. Updated requirement_id from NFR_auto_5 to NFR_hybrid_5. Load time threshold updated from 2 to 4 seconds to match NFR_hybrid_5. The '3 clicks' condition from the original requirement was removed as it was arbitrary and untestable."
+    },
+    {
+      "test_id": "T_hybrid_30",
+      "requirement_id": "NFR_hybrid_5",
+      "scenario": "Validates that content does not require a manual retry to begin playing on a standard mobile data connection.",
+      "steps": [
+        "Step 1: Connect the device to a standard mobile data network.",
+        "Step 2: Launch the Calm app and select three different content items in sequence.",
+        "Step 3: Verify that each item begins playing automatically without requiring the user to tap retry or reload."
+      ],
+      "expected_result": "All three content items begin playing automatically without requiring a manual retry.",
+      "notes": "Carried over from T_auto_30. Updated requirement_id from NFR_auto_5 to NFR_hybrid_5. Steps refined to remove the '3 clicks' navigation condition from the original, which was an arbitrary and untestable measure. Now focuses on the no-retry condition specified in NFR_hybrid_5."
     }
   ]
 }

@@ -1,13 +1,102 @@
-{  "groups": [
+{
+  "groups": [
     {
-      "group_id": "H1",
-      "theme": "Workout logging failures during activity tracking",
-      "review_ids": ["rev_12", "rev_33", "rev_41", "rev_92"],
-      "example_reviews": [
-        "The app crashes whenever I try to log a run.",
-        "Logging workouts causes the app to freeze."
+      "group_id": "G1",
+      "theme": "Positive Experience — Users who find the app genuinely helpful for sleep, relaxation, and stress relief, and are satisfied with its content and value.",
+      "review_ids": [
+        "R00005", "R00007", "R00008", "R00010", "R00013", "R00014", "R00017",
+        "R00029", "R00031", "R00032", "R00033", "R00035", "R00041", "R00043",
+        "R00052", "R00053", "R00061", "R00062", "R00065", "R00066", "R00073",
+        "R00075", "R00077", "R00078", "R00080", "R00083", "R00088", "R00090",
+        "R00091", "R00107", "R00112", "R00115", "R00118", "R00120", "R00126",
+        "R00133", "R00134", "R00144", "R00153", "R00161", "R00165", "R00167",
+        "R00172", "R00188", "R00189", "R00191", "R00192", "R00194", "R00198",
+        "R00200"
       ],
-      "notes": "Removed one unrelated review about login problems from the original automated group."
+      "example_reviews": [
+        "absolutely amazing app",
+        "Love the app so far ☺️",
+        "awesome fell right to sleep",
+        "I love the sleeping sounds.",
+        "useful yoga n medicine app"
+      ],
+      "notes": "These reviews were removed specifically, rest were removed since I can't manually reviews hundreds of reviews per group; tried review atleast 30 per group, I could not manually read them all, (reason in brackets):  removed R00001 (not positive - frustrated review), removed R00071 (vague), R00101 (feedback, app issues), R00108 (feedback, critic), R00116 (value), R00141 (negative/didn't work for them), R00158 (vague), R00171 (negative/didn't work for them)."
+    },
+    {
+      "group_id": "G2",
+      "theme": "Subscription and Billing Complaints — Users who are frustrated with the pricing model, unexpected charges, difficulty cancelling, or poor refund experiences.",
+      "review_ids": [
+        "R00006", "R00009", "R00012", "R00016", "R00019", "R00024", "R00027",
+        "R00030", "R00034", "R00039", "R00046", "R00049", "R00051", "R00056",
+        "R00064", "R00072", "R00079", "R00089", "R00092", "R00095", "R00097",
+        "R00102", "R00106", "R00110", "R00130", "R00132", "R00136", "R00138",
+        "R00140", "R00142", "R00146", "R00147", "R00152"
+      ],
+      "example_reviews": [
+        "it is paid completely beware",
+        "nightmare to get a refund from!",
+        "it wanted to charge me $6.66 a month",
+        "why not be upfront on the price? and be reasonable",
+        "They charged me after I requested that it be canceled."
+      ],
+      "notes": "Had to clarify the group to payment stuff, but manual checking reviews saw some still slip through the cracks; R00003 (positive review), R00059 (didn't like app due to AI usage), R00109 (App issue, not payment). Made the group more focused specifically on billing mechanics and subscription management frustrations."
+    },
+    {
+      "group_id": "G3",
+      "theme": "Content and Feature Feedback — Users who specifically comment on the quality, variety, or discoverability of the app's content and features, both positively and negatively.",
+      "review_ids": [
+        "R00011", "R00015", "R00018", "R00020", "R00021", "R00040", "R00048",
+        "R00058", "R00063", "R00069", "R00084", "R00087", "R00093", "R00099",
+        "R00111", "R00117", "R00123", "R00125", "R00127", "R00131", "R00148",
+        "R00151", "R00154", "R00159", "R00166", "R00169", "R00170", "R00175",
+        "R00182", "R00190", "R00206", "R00215", "R00217", "R00228", "R00231"
+      ],
+      "example_reviews": [
+        "Too many pop ups to share the app.",
+        "it no longer shows the daily resets",
+        "not enough material for sleep stories",
+        "wish there were more short-form sleep pnes",
+        "4 stars for content, 2 stars for usability."
+      ],
+      "notes": "Group Theme was refined to feedback towards the App itself. Still removed reviews like; R00002 (just negative, no feedback), R00104 (nonsense), R00205 (tangent; no feedback)."
+    },
+    {
+      "group_id": "G4",
+      "theme": "Technical Issues and App Bugs — Users who experience specific technical problems such as app crashes, login failures, playback glitches, or poor performance.",
+      "review_ids": [
+        "R00060", "R00081", "R00145", "R00149", "R00213", "R00273", "R00276",
+        "R00289", "R00297", "R00334", "R00391", "R00397", "R00398", "R00416",
+        "R00437", "R00450", "R00536", "R00544", "R00555", "R00646", "R00651",
+        "R00659", "R00701", "R00707", "R00714", "R00728", "R00748", "R00761",
+        "R00763", "R00764", "R00766"
+      ],
+      "example_reviews": [
+        "useless, poor performance",
+        "stinks lots of ads and login junk",
+        "can't even log on ro the app. so stupid",
+        "App keeps stopping and then force closes.",
+        "didn't use everything was locked."
+      ],
+      "notes": "By far the most miscategorized reviews, these reviews were removed; R00122 (fits more in g3), R00270 (more suited for group 2), R00346 (more suited for group 2), R00347 (more suited to group 2 or 3), R00362 (more suited for group 2), R00570 (frustrated/negative review), R00596 (more suited for group 2), R00598 (more suited to group 3), R00640 (more suited to group 2), R00684 (more suited to group 2), R00685 (group 2), R00742 (group 3). Theme was refined to focus strictly on technical bugs and performance issues."
+    },
+    {
+      "group_id": "G5",
+      "theme": "Value Perception and Price Comparison — Users who feel the app is not worth the cost, compare it unfavourably to free alternatives, or question whether the premium pricing is justified.",
+      "review_ids": [
+        "R00036", "R00042", "R00044", "R00047", "R00050", "R00068", "R00086",
+        "R00105", "R00113", "R00124", "R00155", "R00160", "R00173", "R00174",
+        "R00181", "R00184", "R00274", "R00287", "R00319", "R00325", "R00330",
+        "R00355", "R00371", "R00376", "R00388", "R00471", "R00477", "R00497",
+        "R00513", "R00582", "R00605", "R00612", "R00638"
+      ],
+      "example_reviews": [
+        "I googled free. not free",
+        "money money money....stay away",
+        "never used it now they want 79 $",
+        "it is not a free app after 7 days.",
+        "very useless. I pay to sleep ? idiots"
+      ],
+      "notes": "Theme was clarified to distinguish this group from G2. G5 captures users questioning the value proposition and comparing Calm to free alternatives, rather than users with specific billing or cancellation complaints. Removed reviews; R00028 (not a fit, but no cost/value talk), R00249 (privacy concerns, not money), R00478 (unrelated? positive review?), R00509 (positive review, no money talk)."
     }
   ]
 }

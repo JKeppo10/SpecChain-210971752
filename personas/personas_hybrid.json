@@ -2,30 +2,168 @@
   "personas": [
     {
       "id": "P_hybrid_1",
-      "name": "Frequent Fitness Logger",
-      "description": "A user who depends on the app for regular workout tracking and expects logging to work reliably during or immediately after exercise.",
-      "derived_from_group": "H1",
+      "name": "The Satisfied User",
+      "description": "A user who actively uses the Calm app for sleep and stress relief and finds it genuinely effective, regularly relying on its sleep stories, soundscapes, and meditations as part of their routine.",
+      "derived_from_group": "G1",
       "goals": [
-        "Log workouts quickly",
-        "Track activities without interruption"
+        "Use the app consistently to fall asleep faster using sleep stories and soundscapes",
+        "Maintain a calming routine to manage daily stress and anxiety",
+        "Continue experiencing the app's content as relaxing and effective over time"
       ],
       "pain_points": [
-        "The app crashes while saving workouts",
-        "Previously entered activity data may disappear"
+        "Audio sessions occasionally stop or behave unexpectedly mid-use",
+        "Some content feels repetitive after extended use",
+        "Notifications from the app can interrupt an otherwise calming session"
       ],
       "context": [
-        "Using the app during exercise sessions",
-        "Using the app outdoors or while moving"
+        "Using the app at bedtime as part of a nightly wind-down routine",
+        "Using the app during stressful moments throughout the day for a quick reset"
       ],
       "constraints": [
-        "Workout logging must complete without crashing",
-        "Saved workout data must persist"
+        "Audio playback must be uninterrupted from start to finish",
+        "Content must remain fresh enough to support long-term daily use"
       ],
       "evidence_reviews": [
-        "rev_12",
-        "rev_41"
+        "R00005",
+        "R00029",
+        "R00052",
+        "R00075",
+        "R00078",
+        "R00088"
       ],
-      "notes": "Refined the persona description and removed an unsupported assumption about synchronization."
+      "notes": "Renamed from 'The Serene Seeker' to better reflect the hybrid G1 which is specifically a positive experience group. Pain points revised to only include issues grounded in G1 reviews."
+    },
+    {
+      "id": "P_hybrid_2",
+      "name": "The Billing Victim",
+      "description": "A user who has been unexpectedly charged, struggled to cancel their subscription, or been denied a refund, and is now frustrated and distrustful of Calm's billing and support processes.",
+      "derived_from_group": "G2",
+      "goals": [
+        "Cancel their subscription and stop being charged without requiring external support",
+        "Receive a refund for unexpected or unauthorised charges",
+        "Understand exactly what they are being charged for and when"
+      ],
+      "pain_points": [
+        "Continued to be charged after requesting cancellation",
+        "The cancellation process loops back to the app store with no clear resolution",
+        "Pricing and trial terms were not made clear before charges were applied"
+      ],
+      "context": [
+        "Attempting to cancel a free trial before it converts to a paid subscription",
+        "Noticing an unexpected charge on their bank statement and trying to resolve it"
+      ],
+      "constraints": [
+        "Cancellation must be completable within the app without requiring contact with external support",
+        "Subscription pricing and billing terms must be clearly communicated before any charge is applied"
+      ],
+      "evidence_reviews": [
+        "R00019",
+        "R00024",
+        "R00056",
+        "R00079",
+        "R00095",
+        "R00130"
+      ],
+      "notes": "Renamed from 'The Frustrated Saver' the original description of 'budget-conscious and hesitant' was inaccurate. G2 hybrid reviews show users who already subscribed and faced billing/cancellation problems, not users hesitant to subscribe. All goals, pain points, and constraints now grounded in billing and cancellation evidence from G2."
+    },
+    {
+      "id": "P_hybrid_3",
+      "name": "The Content Critic",
+      "description": "A user who actively engages with the app's content and features but has specific feedback about what works and what does not, including content variety, navigation design, and notification behaviour.",
+      "derived_from_group": "G3",
+      "goals": [
+        "Access a wide variety of sleep stories, soundscapes, and meditation sessions",
+        "Navigate the app easily to find specific types of content without frustration",
+        "Have control over app notifications and interruptions during active sessions"
+      ],
+      "pain_points": [
+        "Not enough sleep story content, leading to repetition over time",
+        "Navigation design makes it difficult to find specific content types",
+        "App notifications interrupt active sessions at inappropriate times"
+      ],
+      "context": [
+        "Using the app nightly and gradually exhausting the available sleep story library",
+        "Searching for a specific type of content such as nature sounds or short meditations and struggling to find it"
+      ],
+      "constraints": [
+        "New content must be added frequently enough to prevent repetition for long-term users",
+        "Navigation must allow users to find and filter content by type without multiple steps"
+      ],
+      "evidence_reviews": [
+        "R00011",
+        "R00018",
+        "R00021",
+        "R00040",
+        "R00058",
+        "R00099"
+      ],
+      "notes": "Renamed from 'The Discerning User' to better reflect the critical feedback nature of G3. Goals and pain points revised to focus specifically on content variety, navigation, and notifications which are the dominant themes in the G3 hybrid reviews."
+    },
+    {
+      "id": "P_hybrid_4",
+      "name": "Blocked by Technical Problems",
+      "description": "A user who is actively trying to use the Calm app but is consistently encounters technical problems including app crashes, login failures, playback errors, and broken features.",
+      "derived_from_group": "G4",
+      "goals": [
+        "Successfully log into the app and access content without errors",
+        "Play audio sessions without crashes, cutoffs, or unexpected stops",
+        "Have broken features fixed promptly through app updates"
+      ],
+      "pain_points": [
+        "App crashes or freezes during use, preventing access to content",
+        "Login failures make it impossible to access an active subscription",
+        "Playback glitches such as audio cutting out or sessions stopping mid-way"
+      ],
+      "context": [
+        "Trying to use the app at bedtime and encountering a crash or login error",
+        "Attempting to play a session during the day and experiencing repeated playback failures"
+      ],
+      "constraints": [
+        "Core app features must function reliably across supported Android devices",
+        "Login and authentication must work consistently without requiring repeated re-entry of credentials"
+      ],
+      "evidence_reviews": [
+        "R00060",
+        "R00081",
+        "R00145",
+        "R00149",
+        "R00213",
+        "R00273"
+      ],
+      "notes": "Renamed from 'The Frustrated Tech User'. All goals, pain points, and constraints now strictly grounded in technical bug and performance evidence from the G4 hybrid group."
+    },
+    {
+      "id": "P_hybrid_5",
+      "name": "Value Skeptic",
+      "description": "A user who questions whether the Calm app's premium subscription is worth the cost, frequently comparing it to free alternatives and feeling that the unique value of the paid content is not clearly justified.",
+      "derived_from_group": "G5",
+      "goals": [
+        "Determine whether Calm's premium content is meaningfully better than free alternatives",
+        "Find content on Calm that is not available for free elsewhere",
+        "Make an informed decision about whether to subscribe or cancel based on clear value information"
+      ],
+      "pain_points": [
+        "Feels that equivalent or better content is freely available on YouTube or other apps",
+        "Cannot justify the annual subscription cost relative to what is offered",
+        "The app does not clearly communicate what makes its content worth paying for"
+      ],
+      "context": [
+        "Evaluating whether to renew their subscription after a trial or first billing period",
+        "Browsing free alternatives and comparing them directly to Calm's paid offering"
+      ],
+      "constraints": [
+        "The app must clearly communicate what content is exclusive or premium versus freely available elsewhere",
+        "The value of the subscription must be demonstrable within the first session for new users"
+      ],
+      "evidence_reviews": [
+        "R00036",
+        "R00042",
+        "R00047",
+        "R00068",
+        "R00113",
+        "R00155"
+      ],
+      "notes": "Renamed from 'The Frugal Skeptic'. Differentiated clearly from P2: P2 is about billing mechanics and unexpected charges, P5 is about value perception and price comparison to free alternatives. Goals and pain points now focus specifically on the value justification problem rather than billing complaints."
     }
   ]
 }

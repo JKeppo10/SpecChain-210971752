@@ -1,5 +1,9 @@
-# Application: [Calm] 
-- Most important difference between pipelines: [The automated pipeline produced broader personas, while the manual pipeline produced more focused personas grounded in specific review groups.]
-- Most useful pipeline: [The hybrid pipeline produced the most balanced outputs because it preserved automation speed while improving clarity and traceability.] 
-- Most surprising finding: [Several automated requirements were grammatically correct but too vague to support reliable test generation.]
-- Observed weakness in the automated pipeline: [Some personas included unsupported assumptions that were not clearly grounded in the reviews.]
+# Application: Calm
+
+- Most important difference between pipelines: The automated pipeline achieved full dataset coverage (1.0) by processing all 3,944 cleaned reviews, while the manual pipeline was limited to a small fraction of the dataset (coverage 0.0183) due to the impracticality of manually reading 5,000 reviews. The hybrid pipeline bridged this gap by inheriting the broad evidence base of the automated pipeline while human refinement corrected the misclassifications of reviews, vague personas, and untestable requirements that automation introduced.
+
+- Most useful pipeline: The hybrid pipeline produced the most useful outputs overall. It preserved the coverage advantage of automation while reducing the ambiguity ratio from 0.4667 in the automated pipeline to 0.0. The manual pipeline would produce the highest quality artifacts in isolation, but is not scalable to a dataset of this size.
+
+- Most surprising finding: The cleaned dataset while necessary for LLM processing stripped a significant amount of context from the reviews. Lemmatization, stop word removal, and punctuation stripping left review text that was often unreadable and semantically degraded, I had to go back to the raw data set to read the reviews because I a lot of the time I could not really understand what the cleaned review was trying to say. This appears to have contributed directly to the automated pipeline's grouping errors, where the LLM clustered reviews by surface-level keyword overlap rather than underlying user intent, which lead to a lot of misclassifications of reviews into the wrong groups.
+
+- Observed weakness in the automated pipeline: Beyond the data quality issue, the LLM consistently produced requirements that described how something should be achieved rather than what the system should do, used unmeasurable language such as "seamless", "intuitive", and "easy", and generated personas with unsupported claims about user behaviour that were not grounded in the review groups they were derived from. Several review groups also contained miscategorized reviews that belonged in different groups, which flowed through into downstream personas and requirements. Much more care would need to go into the prompt engineering and overall techniques it uses to lower the error rate of this.
